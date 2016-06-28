@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         'jshint',
         //'concat',
         'uglify',
-        'processhtml',
+        //'processhtml',
         'validation',
         'htmlmin',
         //'svgstore',

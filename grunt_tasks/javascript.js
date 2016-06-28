@@ -36,9 +36,7 @@ module.exports = function (grunt, config) {
                     expand: true,
                     cwd: 'src/js',
                     src: '*.js',
-                    dest: config.jsDir,
-                    ext: '.min.js',
-                    extDot: 'first'
+                    dest: config.jsDir
                 }]
             }
         },

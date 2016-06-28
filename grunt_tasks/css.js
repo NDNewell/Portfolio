@@ -1,12 +1,13 @@
 module.exports = function (grunt, config) {
     grunt.config.merge({
         cssmin: {
-            dist: {
-                src: [
-                    //'foo/css/*.css',
-                    'src/css/**/**/*.css'
-                ],
-                dest: config.cssDir + 'style.min.css'
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'dist/css'
+                }],
             }
         },
         watch: {
