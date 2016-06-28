@@ -1,3 +1,6 @@
-body {
-  background-color: blue;
+.project-one,
+.project-two,
+.project-three,
+.project-four {
+  width: 50%;
 }
