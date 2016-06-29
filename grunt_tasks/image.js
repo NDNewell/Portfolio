@@ -86,7 +86,11 @@ module.exports = function (grunt, config) {
                     'dist/img/Bootstrap.svg': 'src/img/Bootstrap.svg',
                     'dist/img/CSS3.svg': 'src/img/CSS3.svg',
                     'dist/img/HTML5.svg': 'src/img/HTML5.svg',
-                    'dist/img/jQuery.svg': 'src/img/jQuery.svg'
+                    'dist/img/jQuery.svg': 'src/img/jQuery.svg',
+                    'dist/img/knockout.svg': 'src/img/knockout.svg',
+                    'dist/img/github.svg': 'src/img/github.svg',
+                    'dist/img/grunt.svg': 'src/img/grunt.svg',
+                    'dist/img/firebase.svg': 'src/img/firebase.svg'
                 }
             }
         },

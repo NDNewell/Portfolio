@@ -64,3 +64,13 @@ div.title h3 {
   background-color: white;
 }
 
+table {
+  text-align: center;
+  width: 100%;
+}
+
+td img {
+  height: 90px;
+  width: 90px;
+}
+
