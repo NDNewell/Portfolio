@@ -4,7 +4,6 @@ menu.addEventListener('click', function(e) {
   e.stopPropagation();
 });
 
-
 // Close drawer upon clicking drawer
 drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');

@@ -35,10 +35,6 @@ a#menu svg {
   fill: #000;
 }
 
-#drawer {
-
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -52,6 +48,7 @@ a#menu svg {
 
 div.title h1,
 div.title h3 {
+  text-align: center;
   margin-right: 10px;
   margin-left: 10px;
   color: black;
@@ -61,9 +58,9 @@ div.title h3 {
   margin-top: -15px;
 }
 
-
 .card {
-  margin: 8px;
+  margin: 0px 8px 8px 8px;
   padding: 5px;
   background-color: white;
 }
+
