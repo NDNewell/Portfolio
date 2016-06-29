@@ -1,0 +1,1 @@
+menu.addEventListener("click",function(a){drawer.classList.toggle("open"),a.stopPropagation()}),drawer.addEventListener("click",function(a){drawer.classList.toggle("open"),a.stopPropagation()});
