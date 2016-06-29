@@ -5,7 +5,8 @@ body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Lucida Console", Monaco;
+  background-color: #099DD9;
 }
 
 nav {
@@ -38,16 +39,12 @@ a#menu svg {
 }
 
 .box {
-  height: 150px;
   width: 100%;
 }
 
-.slider {
-  background-color: purple;
-}
-
-.about {
-  background-color: red;
+div.title h1,
+div.title h2 {
+  color: black;
 }
 
 .skills {
