@@ -1,6 +1,6 @@
 module.exports = function (grunt, config) {
     grunt.config.merge({
-        sprity: {
+        /*sprity: {
           options: {
             'cssPath': '../img/png/',
             'processor': 'css',
@@ -69,7 +69,7 @@ module.exports = function (grunt, config) {
                     'foo/img/svg/svg_sprites.svg': 'src/img/svg/*.svg'
                 }
             }
-        },
+        },*/
         svgmin: {
             options: {
                 plugins: [
@@ -82,25 +82,29 @@ module.exports = function (grunt, config) {
             },
             dist: {
                 files: {
-                    'dist/img/svg/svg_sprites_v1.svg': 'foo/img/svg/*.svg'
+                    'dist/img/JavaScript.svg': 'src/img/JavaScript.svg',
+                    'dist/img/Bootstrap.svg': 'src/img/Bootstrap.svg',
+                    'dist/img/CSS3.svg': 'src/img/CSS3.svg',
+                    'dist/img/HTML5.svg': 'src/img/HTML5.svg',
+                    'dist/img/jQuery.svg': 'src/img/jQuery.svg'
                 }
             }
         },
         watch: {
             svgs: {
-                files: 'src/img/svg/*.svg',
+                files: 'src/img/*.svg',
                 tasks: [
-                    'svgstore',
+                    //'svgstore',
                     'svgmin'
                 ]
-            },
+            }/*,
             raster: {
                 files: ['src/img/jpg/*.jpg', 'src/img/png/*.png'],
                 tasks: [
                     'responsive_images',
                     'imageoptim'
                 ]
-            }
+            }*/
         }
     });
 };
