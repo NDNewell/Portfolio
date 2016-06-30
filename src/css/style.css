@@ -46,12 +46,15 @@ a#menu svg {
   width: 100%;
 }
 
+.box h1,
+.box h3 {
+  text-align: center;
+}
+
 div.title h1,
 div.title h3 {
-  text-align: center;
   margin-right: 10px;
   margin-left: 10px;
-  color: black;
 }
 
 div.title h3 {
@@ -64,10 +67,17 @@ div.title h3 {
   background-color: white;
 }
 
+
+div.skill img {
+  display: block;
+  margin: auto;
+  height: 90px;
+  width: 90px;
+}
+
 div.project {
   text-align: center;
-  height: 300px;
-
+  height: 320px;
 }
 
 div.project img {
@@ -75,6 +85,8 @@ div.project img {
 }
 
 div.project button {
+  height: 35px;
+  width: 130px;
   border: .5px solid #5CBDE2;
   font-size: 1em;
   color: #5CBDE2;
