@@ -20,7 +20,6 @@ nav {
   background-color: #036185;
   -webkit-transform: translate(-2000px, 0);
   transform: translate(-2000px, 0);
-  /* Optionally, we animate the drawer. */
   transition: transform 0.3s ease;
 }
 
@@ -51,6 +50,24 @@ a#menu svg {
   text-align: center;
 }
 
+.card {
+  margin: 0px 8px 8px 8px;
+  padding: 5px;
+  background-color: white;
+}
+
+div.title div {
+  height: 200px;
+  width: 340px;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  border: 5px solid white;
+  background-image: url("/img/workspace.jpg");
+  -webkit-filter: grayscale(.6);
+  filter: grayscale(.6);
+  background-size: 340px 226.44px;
+}
+
 div.title h1,
 div.title h3 {
   margin-right: 10px;
@@ -60,13 +77,6 @@ div.title h3 {
 div.title h3 {
   margin-top: -15px;
 }
-
-.card {
-  margin: 0px 8px 8px 8px;
-  padding: 5px;
-  background-color: white;
-}
-
 
 div.skill img {
   display: block;
