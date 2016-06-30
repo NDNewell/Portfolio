@@ -95,7 +95,10 @@ module.exports = function (grunt, config) {
                     'dist/img/flow-tree.svg': 'src/img/flow-tree.svg',
                     'dist/img/colours.svg': 'src/img/colours.svg',
                     'dist/img/surflist_banner.svg': 'src/img/surflist_banner.svg',
-                    'dist/img/udacifeeds.svg': 'src/img/udacifeeds.svg'
+                    'dist/img/udacifeeds.svg': 'src/img/udacifeeds.svg',
+                    'dist/img/twitter-with-circle.svg': 'src/img/twitter-with-circle.svg',
+                    'dist/img/linkedin-with-circle.svg': 'src/img/linkedin-with-circle.svg',
+                    'dist/img/github-with-circle.svg': 'src/img/github-with-circle.svg',
                 }
             }
         },

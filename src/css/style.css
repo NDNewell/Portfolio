@@ -121,3 +121,22 @@ td img {
   width: 90px;
 }
 
+div.footer div {
+  background-color: #9d9c9c;
+}
+
+div.social {
+  padding: 20px 5px 5px 5px;
+  text-align: center;
+}
+
+div.social img {
+  height: 50px;
+  width: 50px;
+}
+
+div.contact {
+  padding: 5px;
+  color: white;
+  line-height: 3px;
+}
