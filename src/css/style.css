@@ -16,8 +16,9 @@ nav {
   padding-top: 25%;
   text-align: center;
   font-size: 2em;
-  color: #5CBDE2;
+  color: white;
   background-color: #333;
+  opacity: .9;
   -webkit-transform: translate(-2000px, 0);
   transform: translate(-2000px, 0);
   transition: transform 0.3s ease;
@@ -58,14 +59,14 @@ a#menu svg {
 }
 
 div.title div {
-  height: 226.44px;
+  height: 252.78px;
   color: white;
   text-shadow: 0px 0px 10px black;
-  border: 5px solid white;
   background-image: url("/img/workspace.jpg");
+  background-repeat: no-repeat;
   -webkit-filter: grayscale(.6);
   filter: grayscale(.6);
-  background-size: 340px 226.44px;
+  background-size: 359px 262.78px;
 }
 
 div.title h1,

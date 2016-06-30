@@ -93,7 +93,9 @@ module.exports = function (grunt, config) {
                     'dist/img/firebase.svg': 'src/img/firebase.svg',
                     'dist/img/code.svg': 'src/img/code.svg',
                     'dist/img/flow-tree.svg': 'src/img/flow-tree.svg',
-                    'dist/img/colours.svg': 'src/img/colours.svg'
+                    'dist/img/colours.svg': 'src/img/colours.svg',
+                    'dist/img/surflist_banner.svg': 'src/img/surflist_banner.svg',
+                    'dist/img/udacifeeds.svg': 'src/img/udacifeeds.svg'
                 }
             }
         },
