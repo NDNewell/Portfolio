@@ -90,7 +90,10 @@ module.exports = function (grunt, config) {
                     'dist/img/knockout.svg': 'src/img/knockout.svg',
                     'dist/img/github.svg': 'src/img/github.svg',
                     'dist/img/grunt.svg': 'src/img/grunt.svg',
-                    'dist/img/firebase.svg': 'src/img/firebase.svg'
+                    'dist/img/firebase.svg': 'src/img/firebase.svg',
+                    'dist/img/code.svg': 'src/img/code.svg',
+                    'dist/img/flow-tree.svg': 'src/img/flow-tree.svg',
+                    'dist/img/colours.svg': 'src/img/colours.svg'
                 }
             }
         },

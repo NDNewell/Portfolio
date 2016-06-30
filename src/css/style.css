@@ -64,6 +64,23 @@ div.title h3 {
   background-color: white;
 }
 
+div.project {
+  text-align: center;
+  height: 300px;
+
+}
+
+div.project img {
+  width: 100%;
+}
+
+div.project button {
+  border: .5px solid #5CBDE2;
+  font-size: 1em;
+  color: #5CBDE2;
+  background-color: white;
+}
+
 table {
   text-align: center;
   width: 100%;
