@@ -6,7 +6,7 @@ body {
 
 body {
   font-family: "Lucida Console", Monaco;
-  background-color: #099DD9;
+  background-color: #d9d9d9;
 }
 
 nav {
@@ -16,11 +16,12 @@ nav {
   padding-top: 25%;
   text-align: center;
   font-size: 2em;
-  color: #efefef;
-  background-color: #036185;
+  color: #5CBDE2;
+  background-color: #333;
   -webkit-transform: translate(-2000px, 0);
   transform: translate(-2000px, 0);
   transition: transform 0.3s ease;
+  z-index: 1;
 }
 
 nav.open {
@@ -57,8 +58,7 @@ a#menu svg {
 }
 
 div.title div {
-  height: 200px;
-  width: 340px;
+  height: 226.44px;
   color: white;
   text-shadow: 0px 0px 10px black;
   border: 5px solid white;
@@ -76,6 +76,13 @@ div.title h3 {
 
 div.title h3 {
   margin-top: -15px;
+}
+
+div.about h3,
+div.skills h3,
+div.projects h3,
+div.stack h3 {
+  color: #5CBDE2;
 }
 
 div.skill img {
