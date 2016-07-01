@@ -55,7 +55,7 @@
         <div class="card skill">
           <h3>-strategy-</h3>
           <img src="/img/flow-tree.svg" alt="strategy z">
-          <p>my background in marketing and sales enable me to think big for you, hitting targets, keeping to a timeline and winning over users.</p>
+          <p>my background in marketing and sales enables me to think big for you, hitting targets, keeping to a timeline and winning over users.</p>
         </div>
         <div class="card skill">
           <h3>-technology-</h3>
@@ -68,8 +68,8 @@
           <h3>-work-</h3>
           <div class="project">
             <img src="/img/surflist_banner.svg" alt="surflist banner">
-            <p>made a wave finding app for surfers</p>
-            <button type="button">more info</button>
+            <p>made a wave finder app for surfers</p>
+            <button type="button" id="surflist-button">more info</button>
           </div>
           <div class="project">
             <img src="/img/cartmancrush_banner.png" alt="cartman crush banner">
@@ -113,20 +113,46 @@
       <div class="box footer">
         <div class="card">
           <div class="social">
-            <img src="/img/github-with-circle.svg" alt="githun icon">
+            <img src="/img/mail-with-circle.svg" alt="email icon">
+            <img src="/img/github-with-circle.svg" alt="github icon">
             <img src="/img/linkedin-with-circle.svg" alt="linkedin icon">
             <img src="/img/twitter-with-circle.svg" alt="twitter icon">
           </div>
           <div class="contact">
             <p>UK: +44 07490 200 466</p>
-            <p>US: +1 303 757 2195</p>
+            <p>US: +1 720 757 2195</p>
             <p>nicholas.newell@protonmail.ch</p>
           </div>
         </div>
       </div>
     </div>
+      <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+        </div>
+        <div class="modal-body">
+          <img src="/img/surflist_banner.svg" alt="surflist project modal banner">
+          <h3>SURFLIST</h3>
+          <p>This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.</p>
+          <hX>The project focused on:</hX>
+          <ul>
+            <li>JavaScript design patterns</li>
+            <li>JavaScript frameworks such as Knockout.js (MVVM)</li>
+            <li>loading data via AJAX requests</li>
+            <li>implementation of third-party APIs</li>
+            <li>storing assets to local storage for faster loading</li>
+            <li>caching application assets and files for faster loading</li>
+            <li>building with Grunt and Node.js modules for streamlining the build process</li>
+            <li>implementing image sprite sheets as well as external svg sprite sheets</li>
+            <li>utilizing Firebase for hosting, user authentication, and back-end data storage</li>
+          </ul>
+          <div class="link-container">
+            <img src="/img/publish.svg" alt="link to project icon">
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-
   <script src="js/app.js"></script>
-
 </html>

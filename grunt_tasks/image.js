@@ -99,12 +99,17 @@ module.exports = function (grunt, config) {
                     'dist/img/twitter-with-circle.svg': 'src/img/twitter-with-circle.svg',
                     'dist/img/linkedin-with-circle.svg': 'src/img/linkedin-with-circle.svg',
                     'dist/img/github-with-circle.svg': 'src/img/github-with-circle.svg',
+                    'dist/img/mail-with-circle.svg': 'src/img/mail-with-circle.svg',
+                    'dist/img/publish.svg': 'src/img/publish.svg'
                 }
             }
         },
         watch: {
             svgs: {
-                files: 'src/img/*.svg',
+                files: [
+                    'src/img/*.svg',
+                    'grunt_tasks/image.js'
+                ],
                 tasks: [
                     //'svgstore',
                     'svgmin'
