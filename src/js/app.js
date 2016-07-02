@@ -1,11 +1,51 @@
-var projectInfo = {
-    "projects": [
+/* tools */
+
+
+
+// Select elements by class or id
+var $ = function(name) {
+
+  if(name.indexOf('#') > -1) {
+      var id = removeChar(name),
+          elemId = document.getElementById(id);
+      return elemId;
+  } else {
+      var clss = removeChar(name),
+          elemClass = document.getElementsByClassName(clss)[0];
+      return elemClass;
+  }
+
+  function removeChar(name) {
+    var newName = name.substr(1);
+    return newName;
+  }
+};
+
+// Append content to existing element
+var append = function(elem, content) {
+  elem.innerHTML += content;
+};
+
+// Get a specific child element
+var getNthChild = function(elem, index) {
+  var child = elem.childNodes[index];
+  return child;
+};
+
+
+
+/* model */
+
+
+
+var projects = {
+    "project": [
         {
-          "modalBanner": "/img/surflist_banner.svg",
           "projectName": "SURFLIST",
+          "modalBanner": "/img/surflist_banner.svg",
           "projectDescription":
               "This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.",
-          "bulletDescriptions": [
+          "infoBullets": [
               "JavaScript design patterns",
               "JavaScript frameworks such as Knockout.js (MVVM)",
               "loading data via AJAX requests",
@@ -21,23 +61,39 @@ var projectInfo = {
     ]
 };
 
-var $ = function(name) {
 
-  if(name.indexOf('#') > -1) {
-      var id = removeChar(name);
-      var elemId = document.getElementById(id);
-      return elemId;
-  } else {
-      var clss = removeChar(name);
-      var elemClass = document.getElementsByClassName(clss)[0];
-      return elemClass;
+
+/* view */
+
+
+
+var modalContructor = function () {
+
+  append(modalBody, '<img src="' + projects.project[0].modalBanner + '" alt="surflist project modal banner">');
+  append(modalBody, '<h3>' + projects.project[0].projectName + '</h3>');
+  append(modalBody, '<p>' + projects.project[0].projectDescription + '</p>');
+  append(modalBody, '<hX>The project focused on:</hX>');
+  append(modalBody, '<ul></ul>');
+
+  var infoBulletsLength = projects.project[0].infoBullets.length;
+  var projectBullets = getNthChild(modalBody, 4);
+
+  for (var i = 0; i < infoBulletsLength; i++) {
+    append(projectBullets, '<li>' + projects.project[0].infoBullets[i] + '</li>');
   }
 
-  function removeChar(name) {
-    var newName = name.substr(1);
-    return newName;
-  }
+  append(modalBody, '<div class="link-container"></div>');
+
+  var modalLinkContainer = $('.link-container');
+
+  append(modalLinkContainer, '<a href="' + projects.project[0].externalLink + '" target="_blank"><img src="/img/publish.svg" alt="link to project icon"></a>');
 };
+
+
+
+/* controllers */
+
+
 
 // Open drawer to display menu on clicking hamburger icon
 menu.addEventListener('click', function(e) {
@@ -53,14 +109,11 @@ drawer.addEventListener('click', function(e) {
   document.body.style.overflow = "visible";
 });
 
-// Cache a reference to the modal
-var modal = $('#project-modal');
-
-// Cache a reference to the button that opens the surflist modal
-var surflistBtn = $('#surflist-button');
-
-// Save a ref to the close modal button
-var closeModalBtn = $('.close');
+// Cache a reference to elements
+var modal = $('#project-modal'),
+    surflistBtn = $('#surflist-button'),
+    closeModalBtn = $('.close'),
+    modalBody = $('.modal-body');
 
 // Open the modal when the btn in clicked
 surflistBtn.onclick = function() {
@@ -81,3 +134,11 @@ window.onclick = function(e) {
     document.body.style.overflow = "visible";
   }
 };
+
+
+modalContructor();
+
+
+
+
+
