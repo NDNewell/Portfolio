@@ -102,6 +102,50 @@ var projects = {
               "utilizing Firebase for hosting, user authentication, and back-end data storage"
           ],
           "externalLink": "https://dazzling-torch-4012.firebaseapp.com/"
+        },
+        {
+          "projectName": "CARTMAN CRUSH",
+          "modalBanner": "/img/cartmancrush_banner.png",
+          "projectDescription":
+              "This is a desktop-based Frogger-like game where the player, Eric Cartman, must navigate a street filled with killer bugs in order to reach the water on the opposite side.",
+          "infoBullets": [
+              "closures",
+              "JavaScript frameworks such as Knockout.js (MVVM)",
+              "object prototype chains",
+              "variable scope",
+              "HTML5 Canvas for game animation"
+          ],
+          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-arcade-game/"
+        },
+        {
+          "projectName": "UdaciFeeds",
+          "modalBanner": "/img/udacifeeds.svg",
+          "projectDescription":
+              "This project consisted of being given a web-based application that reads RSS feeds. The original developer included an incomplete testing suite using Jasmine. The project aim was to complete the testing suite by writing tests that pass.",
+          "infoBullets": [
+              "writing a test that ensures loops work properly",
+              "writing a test that determines if URLs are defined",
+              "writing a test that checks if name fields are completed",
+              "writing a test that ensures the menu element is hidden by default",
+              "writing a test that checks if the menu changes visiblity when clicked",
+              "writing a test that makes sure the feeds load properly"
+          ],
+          "externalLink": "https://github.com/NDNewell/frontend-nanodegree-feedreader"
+        },
+        {
+          "projectName": "Web Performance Optimization",
+          "modalBanner": "/img/perfopt.jpg",
+          "projectDescription":
+              "This project involved being provided two websites with performance related issues. For Cam's Profile website, the goal was to optimize the page loading speed to a PageSpeed score of above 90. For Cam's Pizzeria website, the goal was to increase the frames per second (FPS) to 60+ by reviewing and replacing inefficient code with more succinct constructions.",
+          "infoBullets": [
+              "optimization of the critical rendering path (CRP)",
+              "profiling sites through a mobile phone via Chrome Canary",
+              "optimizing the DOM",
+              "unblocking CSS with media queries",
+              "asyncing JavaScript",
+              "workflow (Gulp and Grunt)"
+          ],
+          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-mobile-portfolio"
         }
     ]
 };
@@ -171,7 +215,7 @@ function showModal(i) {
   })(i));
 }
 
-// Open the modal when the btn in clicked
+// Add event listeners for each project
 for (i = moreInfoBtn.length; i--;) {
   showModal(i);
 }
