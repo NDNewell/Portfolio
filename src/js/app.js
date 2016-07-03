@@ -6,14 +6,19 @@
 var $ = function(name) {
 
   if(name.indexOf('#') > -1) {
-      var id = removeChar(name),
-          elemId = document.getElementById(id);
-      return elemId;
+    var id = removeChar(name),
+        elem = document.getElementById(id);
+    return elem;
   } else {
-      var clss = removeChar(name),
-          elemClass = document.getElementsByClassName(clss)[0];
-      return elemClass;
-  }
+    var clss = removeChar(name),
+        elems = document.getElementsByClassName(clss);
+
+    if(elems.length > 1) {
+      return elems;
+    } else {
+      return elems[0];
+    }
+}
 
   function removeChar(name) {
     var newName = name.substr(1);
@@ -23,13 +28,53 @@ var $ = function(name) {
 
 // Append content to existing element
 var append = function(elem, content) {
-  elem.innerHTML += content;
+
+  if(Array.isArray(elem)) {
+
+    var elemLength = elem.length;
+
+    for(i = elemLength; i--;) {
+      elem[i].innerHTML += content;
+    }
+
+  } else {
+
+    elem.innerHTML += content;
+
+  }
+};
+
+// Clear content within an existing element
+var clear = function(elem) {
+
+  if(Array.isArray(elem)) {
+
+    var elemLength = elem.length;
+
+    for(i = elemLength; i--;) {
+      elem[i].innerHTML = "";
+    }
+
+  } else {
+
+    elem.innerHTML = "";
+
+  }
 };
 
 // Get a specific child element
 var getNthChild = function(elem, index) {
-  var child = elem.childNodes[index];
-  return child;
+
+  if(Array.isArray(elem)) {
+
+    console.log('error: cannot get child for all elements');
+
+  } else {
+
+    var child = elem.childNodes[index];
+    return child;
+
+  }
 };
 
 
@@ -111,18 +156,29 @@ drawer.addEventListener('click', function(e) {
 
 // Cache a reference to elements
 var modal = $('#project-modal'),
-    surflistBtn = $('#surflist-button'),
+    moreInfoBtn = $('.more-info-btn'),
     closeModalBtn = $('.close'),
     modalBody = $('.modal-body');
 
+function showModal(i) {
+  moreInfoBtn[i].addEventListener('click', (function(e) {
+    return function (e) {
+      console.log(e);
+      modalContructor();
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    };
+  })(i));
+}
+
 // Open the modal when the btn in clicked
-surflistBtn.onclick = function() {
-  modal.style.display = "block";
-  document.body.style.overflow = "hidden";
-};
+for (i = moreInfoBtn.length; i--;) {
+  showModal(i);
+}
 
 // Close the modal when the close modal button is clicked
 closeModalBtn.onclick = function() {
+  clear(modalBody);
   modal.style.display = "none";
   document.body.style.overflow = "visible";
 };
@@ -134,9 +190,6 @@ window.onclick = function(e) {
     document.body.style.overflow = "visible";
   }
 };
-
-
-modalContructor();
 
 
 
