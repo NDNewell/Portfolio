@@ -88,6 +88,7 @@ var projects = {
         {
           "projectName": "SURFLIST",
           "modalBanner": "/img/surflist_banner.svg",
+          "shortDescription": "made a wave finder app for surfers",
           "projectDescription":
               "This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.",
           "infoBullets": [
@@ -106,6 +107,7 @@ var projects = {
         {
           "projectName": "CARTMAN CRUSH",
           "modalBanner": "/img/cartmancrush_banner.png",
+          "shortDescription": "created a frogger-like arcade game",
           "projectDescription":
               "This is a desktop-based Frogger-like game where the player, Eric Cartman, must navigate a street filled with killer bugs in order to reach the water on the opposite side.",
           "infoBullets": [
@@ -120,6 +122,7 @@ var projects = {
         {
           "projectName": "UdaciFeeds",
           "modalBanner": "/img/udacifeeds.svg",
+          "shortDescription": "completed testing for this web app",
           "projectDescription":
               "This project consisted of being given a web-based application that reads RSS feeds. The original developer included an incomplete testing suite using Jasmine. The project aim was to complete the testing suite by writing tests that pass.",
           "infoBullets": [
@@ -135,6 +138,7 @@ var projects = {
         {
           "projectName": "Web Performance Optimization",
           "modalBanner": "/img/perfopt.jpg",
+          "shortDescription": "optimized loading and performance",
           "projectDescription":
               "This project involved being provided two websites with performance related issues. For Cam's Profile website, the goal was to optimize the page loading speed to a PageSpeed score of above 90. For Cam's Pizzeria website, the goal was to increase the frames per second (FPS) to 60+ by reviewing and replacing inefficient code with more succinct constructions.",
           "infoBullets": [
@@ -158,25 +162,41 @@ var projects = {
 
 var modalContructor = function () {
 
-  append(modalBody, '<img src="' + projects.project[0].modalBanner + '" alt="surflist project modal banner">');
-  append(modalBody, '<h3>' + projects.project[0].projectName + '</h3>');
-  append(modalBody, '<p>' + projects.project[0].projectDescription + '</p>');
+  append(modalBody, '<img src="' + projects.project[i].modalBanner + '" alt="surflist project modal banner">');
+  append(modalBody, '<h3>' + projects.project[i].projectName + '</h3>');
+  append(modalBody, '<p>' + projects.project[i].projectDescription + '</p>');
   append(modalBody, '<hX>The project focused on:</hX>');
   append(modalBody, '<ul></ul>');
 
-  var infoBulletsLength = projects.project[0].infoBullets.length;
+  var infoBulletsLength = projects.project[i].infoBullets.length;
   var projectBullets = getNthChild(modalBody, 4);
 
   for (var i = 0; i < infoBulletsLength; i++) {
-    append(projectBullets, '<li>' + projects.project[0].infoBullets[i] + '</li>');
+    append(projectBullets, '<li>' + projects.project[i].infoBullets[i] + '</li>');
   }
 
   append(modalBody, '<div class="link-container"></div>');
 
   var modalLinkContainer = $('.link-container');
 
-  append(modalLinkContainer, '<a href="' + projects.project[0].externalLink + '" target="_blank"><img src="/img/publish.svg" alt="link to project icon"></a>');
+  append(modalLinkContainer, '<a href="' + projects.project[i].externalLink + '" target="_blank"><img src="/img/publish.svg" alt="link to project icon"></a>');
 };
+
+function showModal() {
+  moreInfoBtn[i].addEventListener('click', (function(e) {
+    return function (e) {
+      console.log(e);
+      modalContructor();
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    };
+  })(i));
+}
+
+// Add event listeners for each project
+for (i = moreInfoBtn.length; i--;) {
+  showModal();
+}
 
 
 
@@ -203,22 +223,6 @@ var modal = $('#project-modal'),
     moreInfoBtn = $('.more-info-btn'),
     closeModalBtn = $('.close'),
     modalBody = $('.modal-body');
-
-function showModal(i) {
-  moreInfoBtn[i].addEventListener('click', (function(e) {
-    return function (e) {
-      console.log(e);
-      modalContructor();
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden";
-    };
-  })(i));
-}
-
-// Add event listeners for each project
-for (i = moreInfoBtn.length; i--;) {
-  showModal(i);
-}
 
 // Close the modal when the close modal button is clicked
 closeModalBtn.onclick = function() {
