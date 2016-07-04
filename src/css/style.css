@@ -54,7 +54,6 @@ a#menu svg {
 
 .card {
   margin: 0px 8px 8px 8px;
-  padding: 5px;
   background-color: white;
 }
 
@@ -88,6 +87,14 @@ div.stack h3 {
   color: #5CBDE2;
 }
 
+div.about div {
+  padding: 5px 20px;
+}
+
+div.skill {
+  padding: 5px 20px;
+}
+
 div.skill img {
   display: block;
   margin: auto;
@@ -95,9 +102,13 @@ div.skill img {
   width: 90px;
 }
 
+div.projects-card {
+  padding: 5px;
+}
+
 div.project {
   text-align: center;
-  height: 320px;
+  padding: 0px 0px 25px 0px;
 }
 
 div.project img {
@@ -111,6 +122,10 @@ div.project button {
   font-size: 1em;
   color: #5CBDE2;
   background-color: white;
+}
+
+div.stack-card {
+  padding: 5px;
 }
 
 div.modal {
@@ -203,7 +218,8 @@ td img {
   width: 90px;
 }
 
-div.footer div {
+div.footer-card {
+  padding: 5px;
   background-color: #9d9c9c;
 }
 
