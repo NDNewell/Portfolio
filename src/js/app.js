@@ -72,13 +72,13 @@ var clear = function(elem) {
 
     // Iterate through the array and clear the content from each element
     for(i = elemLength; i--;) {
-      elem[i].innerHTML = "";
+      elem[i].textContent = "";
     }
 
   // If the element isn't an array, simply add the content to it
   } else {
 
-    elem.innerHTML = "";
+    elem.textContent = "";
   }
 };
 
@@ -122,7 +122,8 @@ var projects = {
               "implementing image sprite sheets as well as external svg sprite sheets",
               "utilizing Firebase for hosting, user authentication, and back-end data storage"
           ],
-          "externalLink": "https://dazzling-torch-4012.firebaseapp.com/"
+          "externalLink": "https://dazzling-torch-4012.firebaseapp.com/",
+          "cssClass": "surflist"
         },
         {
           "projectName": "CARTMAN CRUSH",
@@ -137,7 +138,8 @@ var projects = {
               "variable scope",
               "HTML5 Canvas for game animation"
           ],
-          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-arcade-game/"
+          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-arcade-game/",
+          "cssClass": "ccrush"
         },
         {
           "projectName": "UdaciFeeds",
@@ -154,7 +156,8 @@ var projects = {
               "checking if the menu changes visiblity when clicked",
               "making sure the feeds load properly"
           ],
-          "externalLink": " http://NDNewell.github.io/frontend-nanodegree-feedreader"
+          "externalLink": "http://NDNewell.github.io/frontend-nanodegree-feedreader",
+          "cssClass": "udacifeeds"
         },
         {
           "projectName": "Web Performance Optimization",
@@ -171,7 +174,8 @@ var projects = {
               "asyncing JavaScript",
               "workflow (Gulp and Grunt)"
           ],
-          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-mobile-portfolio"
+          "externalLink": "https://ndnewell.github.io/frontend-nanodegree-mobile-portfolio",
+          "cssClass": "perf"
         }
     ]
 };
@@ -202,13 +206,14 @@ var $projects = $('.projects'),
 var projectsConstructor = (function() {
 
   // Add a card to the projects section
-  append($projects, '<div class="card">');
+  append($projects, '<div class="card"></div>');
 
   // Save a reference to the project section's card
   var $projectsCard = getNthChild($projects, 0);
 
   // Add a heading to the project section
   append($projectsCard, '<h3>-work-</h3>');
+
 
   // Cache the length of the project data
   var projectsLength = projects.project.length;
@@ -220,35 +225,54 @@ var projectsConstructor = (function() {
     // Save a reference to the currently iterated project
     var project = projects.project[i];
 
-    // Add the project card for the currently iterated projectc
-    append($projectsCard, '<div class="' + project.cssLabel + ' project"><img src="' + project.modalBanner + '" alt="' + project.bannerDescription + '"><p>' + project.shortDescription + '</p><button type="button" class="info-btn">more info</button></div>');
+    // Add projects to the work section
+    loadProjects(project);
   }
 
-  // Save a ref to the more info button on the currently iterated project
-  var $moreInfoBtn = $('.info-btn'),
 
-      // Save a ref to the number of more info buttons
-      $moreInfoBtnLength = $moreInfoBtn.length;
+  // Load project cards to the work section
+  function loadProjects(project) {
 
-  // Iterate through the more info buttons and add a listener for opening
-  // each project's respective modal
-  for(var i = 0; i < $moreInfoBtnLength; i++) {
+    // Create a project card and add to the projects card
+    var projectContainer = document.createElement("div");
+    projectContainer.className = project.cssClass + "-card project";
+    $projectsCard.appendChild(projectContainer);
 
-    // Save a ref to the the project of the currently iterated button
-    // Note: The first button to be iterated over is on the same project card
-    // as the first project object in the projects object array, so the index
-    // number for the buttons are the same and can be used to attach the data
-    // to the evt listener
-    var selectProject = projects.project[i];
+    // Save ref to the current project card
+    var $projectCard = document.getElementsByClassName(project.cssClass + "-card")[0];
+
+    // Add the projects banner image
+    var projectImg = document.createElement("img");
+    projectImg.src = project.modalBanner;
+    projectImg.alt = project.bannerDescription;
+    $projectCard.appendChild(projectImg);
+
+    // Add the project description
+    var projDesc = document.createElement("p"),
+        projDescTxt = document.createTextNode(project.shortDescription);
+    projDesc.appendChild(projDescTxt);
+    $projectCard.appendChild(projDesc);
+
+    // Add the more info button
+    var projBtn = document.createElement("button");
+    projBtn.type = "button";
+    projBtn.className = project.cssClass + "-info-btn";
+    var projBtnTxt = document.createTextNode("more info");
+    projBtn.appendChild(projBtnTxt);
+    $projectCard.appendChild(projBtn);
+
+    // Save a ref to the project's more info button on the currently iterated
+    // project
+    var $moreInfoBtn = document.getElementsByClassName(project.cssClass + "-info-btn")[0];
 
     // Pass the currently iterated button and project to add evt listeners
-    addListener($moreInfoBtn[i], selectProject);
+    addListener($moreInfoBtn, project);
   }
 
   // Add event listeners to each button
-  // Each button will call populate the modal with the appropriate data and
+  // Each button will populate the modal with the appropriate data and
   // make the modal visible
-  function addListener(btn, selectProject) {
+  function addListener(btn, project) {
 
     // Add an event listener to the currently iterated button and pass
     // the currently iterated project to the inner function
@@ -256,10 +280,10 @@ var projectsConstructor = (function() {
 
       // Use a closure to save the current state of data passed to the evt
       // listener
-      return function (project) {
+      return function () {
 
         // Construct the modal with the currently iterated project data
-        modalContructor(selectProject);
+        modalConstructor(project);
 
         // Show the modal
         $modal.style.display = "block";
@@ -267,13 +291,13 @@ var projectsConstructor = (function() {
         // Disable scrolling for the main page
         document.body.style.overflow = "hidden";
       };
-    })(selectProject));
+    })(project));
   }
 })();
 
 // Populate modal with project data
 // Pass the currently iterated project from the projects constructor
-var modalContructor = function (project) {
+var modalConstructor = function (project) {
 
   // Add necessary DOM elements for constructing the modal
   // Add project information to each section
