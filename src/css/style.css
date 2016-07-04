@@ -62,11 +62,13 @@ div.title div {
   height: 252.78px;
   color: white;
   text-shadow: 0px 0px 10px black;
-  background-image: url("/img/workspace.jpg");
-  background-repeat: no-repeat;
+  background: url("/img/workspace.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   -webkit-filter: grayscale(.6);
   filter: grayscale(.6);
-  background-size: 359px 262.78px;
 }
 
 div.title h1,
