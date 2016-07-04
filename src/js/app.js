@@ -27,36 +27,12 @@ var $ = function(name) {
     } else {
       return elems[0];
     }
-}
+  }
 
   // Remove the first character of a string and return the string
   function removeChar(name) {
     var newName = name.substr(1);
     return newName;
-  }
-};
-
-// Append content to existing element
-// This mimics jQuery's append method by passing the selected element and
-// the content one wishes to attach to it
-var append = function(elem, content) {
-
-  // If the element is an array of elements, iterate through them and
-  // add the content
-  if(Array.isArray(elem)) {
-
-    // Save a reference to the length of the array
-    var elemLength = elem.length;
-
-    // Iterate through the array and add the content to each element
-    for(i = elemLength; i--;) {
-      elem[i].innerHTML += content;
-    }
-
-  // If the element isn't an array, simply add the content to it
-  } else {
-
-    elem.innerHTML += content;
   }
 };
 
@@ -205,15 +181,19 @@ var $projects = $('.projects'),
 // completed projects
 var projectsConstructor = (function() {
 
-  // Add a card to the projects section
-  append($projects, '<div class="card"></div>');
+  // Add a container card to the projects section
+  var $projectsContainer = document.createElement("div");
+  $projectsContainer.className = "projects-card card";
+  $projects.appendChild($projectsContainer);
 
   // Save a reference to the project section's card
-  var $projectsCard = getNthChild($projects, 0);
+  var $projectsCard = $(".projects-card");
 
   // Add a heading to the project section
-  append($projectsCard, '<h3>-work-</h3>');
-
+  var $workHeader = document.createElement("h3"),
+      $workHeaderTxt = document.createTextNode("-work-");
+  $workHeader.appendChild($workHeaderTxt);
+  $projectsCard.appendChild($workHeader);
 
   // Cache the length of the project data
   var projectsLength = projects.project.length;
@@ -239,7 +219,7 @@ var projectsConstructor = (function() {
     $projectsCard.appendChild(projectContainer);
 
     // Save ref to the current project card
-    var $projectCard = document.getElementsByClassName(project.cssClass + "-card")[0];
+    var $projectCard = $("." + project.cssClass + "-card");
 
     // Add the projects banner image
     var projectImg = document.createElement("img");
@@ -263,7 +243,7 @@ var projectsConstructor = (function() {
 
     // Save a ref to the project's more info button on the currently iterated
     // project
-    var $moreInfoBtn = document.getElementsByClassName(project.cssClass + "-info-btn")[0];
+    var $moreInfoBtn = $("." + project.cssClass + "-info-btn");
 
     // Pass the currently iterated button and project to add evt listeners
     addListener($moreInfoBtn, project);
@@ -333,7 +313,7 @@ var modalConstructor = function (project) {
 
   // Cache ref to unordered list
   var infoBulletsLength = project.infoBullets.length,
-      $listHead = document.getElementsByClassName(project.cssClass + "-ul-list")[0];
+      $listHead = $("." + project.cssClass + "-ul-list");
 
   // Add project bullet info to the unordered list
   for (var i = 0; i < infoBulletsLength; i++) {
@@ -350,7 +330,7 @@ var modalConstructor = function (project) {
   $modalBody.appendChild($linkContainer);
 
   // Save a ref to the link container
-  var $modalLinkContainer = document.getElementsByClassName("link-container")[0];
+  var $modalLinkContainer = $(".link-container");
 
   // Add a link to the project that opens in a new window
   var $extLink = document.createElement("a");
@@ -360,7 +340,7 @@ var modalConstructor = function (project) {
   $modalLinkContainer.appendChild($extLink);
 
   // Save a ref to external link elem
-  $extLinkElem = document.getElementsByClassName(project.cssClass + "-link")[0];
+  $extLinkElem = $("." + project.cssClass + "-link");
 
   // Add img that opens the external link when clicked
   var $linkImg = document.createElement("img");
