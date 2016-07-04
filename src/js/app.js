@@ -182,18 +182,18 @@ var $projects = $('.projects'),
 var projectsConstructor = (function() {
 
   // Add a container card to the projects section
-  var $projectsContainer = document.createElement("div");
-  $projectsContainer.className = "projects-card card";
-  $projects.appendChild($projectsContainer);
+  var projectsContainer = document.createElement("div");
+  projectsContainer.className = "projects-card card";
+  $projects.appendChild(projectsContainer);
 
   // Save a reference to the project section's card
   var $projectsCard = $(".projects-card");
 
   // Add a heading to the project section
-  var $workHeader = document.createElement("h3"),
-      $workHeaderTxt = document.createTextNode("-work-");
-  $workHeader.appendChild($workHeaderTxt);
-  $projectsCard.appendChild($workHeader);
+  var workHeader = document.createElement("h3"),
+      workHeaderTxt = document.createTextNode("-work-");
+  workHeader.appendChild(workHeaderTxt);
+  $projectsCard.appendChild(workHeader);
 
   // Cache the length of the project data
   var projectsLength = projects.project.length;
@@ -208,7 +208,6 @@ var projectsConstructor = (function() {
     // Add projects to the work section
     loadProjects(project);
   }
-
 
   // Load project cards to the work section
   function loadProjects(project) {
@@ -283,33 +282,33 @@ var modalConstructor = function (project) {
   // Add project information to each section
 
   // Add banner image for the project
-  var $projectImg = document.createElement("img");
-  $projectImg.src = project.modalBanner;
-  $projectImg.alt = project.bannerDescription;
-  $modalBody.appendChild($projectImg);
+  var projectImg = document.createElement("img");
+  projectImg.src = project.modalBanner;
+  projectImg.alt = project.bannerDescription;
+  $modalBody.appendChild(projectImg);
 
   // Add the project name
-  var $projectName = document.createElement("h3"),
-      $projectNameTxt = document.createTextNode(project.projectName);
-  $projectName.appendChild($projectNameTxt);
-  $modalBody.appendChild($projectName);
+  var projectName = document.createElement("h3"),
+      projectNameTxt = document.createTextNode(project.projectName);
+  projectName.appendChild(projectNameTxt);
+  $modalBody.appendChild(projectName);
 
   // Add the project description
-  var $projectDesc = document.createElement("p"),
-      $projectDescTxt = document.createTextNode(project.projectDescription);
-  $projectDesc.appendChild($projectDescTxt);
-  $modalBody.appendChild($projectDesc);
+  var projectDesc = document.createElement("p"),
+      projectDescTxt = document.createTextNode(project.projectDescription);
+  projectDesc.appendChild(projectDescTxt);
+  $modalBody.appendChild(projectDesc);
 
   // Add a header for the list of project bullet points
-  var $listHeader = document.createElement("hX"),
-      $listHeaderTxt = document.createTextNode("The project focused on:");
-  $listHeader.appendChild($listHeaderTxt);
-  $modalBody.appendChild($listHeader);
+  var listHeader = document.createElement("hX"),
+      listHeaderTxt = document.createTextNode("The project focused on:");
+  listHeader.appendChild(listHeaderTxt);
+  $modalBody.appendChild(listHeader);
 
   // Create an empty unordered list
-  var $list = document.createElement("ul");
-  $list.className = project.cssClass + "-ul-list";
-  $modalBody.appendChild($list);
+  var list = document.createElement("ul");
+  list.className = project.cssClass + "-ul-list";
+  $modalBody.appendChild(list);
 
   // Cache ref to unordered list
   var infoBulletsLength = project.infoBullets.length,
@@ -318,35 +317,35 @@ var modalConstructor = function (project) {
   // Add project bullet info to the unordered list
   for (var i = 0; i < infoBulletsLength; i++) {
 
-    var $listItem = document.createElement("li"),
-        $listItemTxt = document.createTextNode(project.infoBullets[i]);
-    $listItem.appendChild($listItemTxt);
-    $listHead.appendChild($listItem);
+    var listItem = document.createElement("li"),
+        listItemTxt = document.createTextNode(project.infoBullets[i]);
+    listItem.appendChild(listItemTxt);
+    $listHead.appendChild(listItem);
   }
 
   // Add a container to hold an svg image link to the project
-  var $linkContainer = document.createElement("div");
-  $linkContainer.className = "link-container";
-  $modalBody.appendChild($linkContainer);
+  var linkContainer = document.createElement("div");
+  linkContainer.className = "link-container";
+  $modalBody.appendChild(linkContainer);
 
   // Save a ref to the link container
   var $modalLinkContainer = $(".link-container");
 
   // Add a link to the project that opens in a new window
-  var $extLink = document.createElement("a");
-  $extLink.href = project.externalLink;
-  $extLink.target = "_blank";
-  $extLink.className = project.cssClass + "-link";
-  $modalLinkContainer.appendChild($extLink);
+  var extLink = document.createElement("a");
+  extLink.href = project.externalLink;
+  extLink.target = "_blank";
+  extLink.className = project.cssClass + "-link";
+  $modalLinkContainer.appendChild(extLink);
 
   // Save a ref to external link elem
   $extLinkElem = $("." + project.cssClass + "-link");
 
   // Add img that opens the external link when clicked
-  var $linkImg = document.createElement("img");
-  $linkImg.src = "/img/publish.svg";
-  $linkImg.alt = "link to project icon";
-  $extLinkElem.appendChild($linkImg);
+  var linkImg = document.createElement("img");
+  linkImg.src = "/img/publish.svg";
+  linkImg.alt = "link to project icon";
+  $extLinkElem.appendChild(linkImg);
 };
 
 // Close the modal when the close modal button is clicked
