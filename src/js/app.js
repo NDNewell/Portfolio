@@ -350,14 +350,15 @@ var modalConstructor = function (project) {
 };
 
 // Close the modal when the close modal button is clicked
-$closeModalBtn.onclick = function() {
+$closeModalBtn.addEventListener("click", function(e) {
 
   // Clear modal of all data
   clearModal();
-};
+
+});
 
 // Close the modal when user clicks anywhere outside of it
-window.onclick = function(e) {
+window.addEventListener("click", function(e) {
 
   // If clicking the outside of the modal, close it
   if(e.target == $modal) {
@@ -365,7 +366,7 @@ window.onclick = function(e) {
     // Clear modal of all data
     clearModal();
   }
-};
+});
 
 function clearModal() {
 
