@@ -36,3 +36,9 @@ div.project {
 div.project img {
   width: 100%;
 }
+
+table {
+  margin: auto;
+  margin-bottom: 15px;
+  width: 433px;
+}
