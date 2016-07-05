@@ -37,8 +37,6 @@ a#menu svg {
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 }

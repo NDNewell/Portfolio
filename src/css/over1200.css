@@ -1,11 +1,3 @@
-.about,
-.skills {
-  width: 50%;
-}
-
-.project-one,
-.project-two,
-.project-three,
-.project-four {
-  width: 25%;
+.about {
+  width: 100%;
 }
