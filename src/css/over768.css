@@ -1,10 +1,14 @@
 div.container {
   margin: auto;
-  width: 748px;
 }
 
 div.skill {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+div.projects-container {
+  margin: auto;
+  width: 727px;
 }
 
 .project-one,

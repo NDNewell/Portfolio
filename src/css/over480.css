@@ -1,7 +1,7 @@
 div.skills {
   display: flex;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 div.skill-container {
