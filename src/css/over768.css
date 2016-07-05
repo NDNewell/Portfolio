@@ -1,3 +1,13 @@
+nav {
+  display: block;
+  width: 260px;
+}
+
+nav div {
+  padding-top: 40px;
+  font-size: 1.5em;
+}
+
 div.container {
   margin: auto;
   margin-top: 50px;

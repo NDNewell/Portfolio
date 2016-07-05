@@ -1,6 +1,5 @@
-div.footer-card {
-  display: flex;
-  flex-wrap: flex;
+nav div {
+font-size: 2em;
 }
 
 div.social,
@@ -15,4 +14,9 @@ div.contact {
 div.social {
   text-align: right;
   order: 2;
+}
+
+div.footer-card {
+  display: flex;
+  flex-wrap: flex;
 }

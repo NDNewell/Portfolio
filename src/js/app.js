@@ -166,7 +166,7 @@ menu.addEventListener('click', function(e) {
 // Close drawer upon clicking drawer
 drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
-  //e.stopPropagation();
+  e.stopPropagation();
   document.body.style.overflow = "visible";
 });
 
