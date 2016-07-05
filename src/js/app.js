@@ -172,7 +172,7 @@ drawer.addEventListener('click', function(e) {
 
 // Cache a reference to elements needed to construct project elems
 // as well as the project modals
-var $projects = $('.projects'),
+var $projectSection = $('.projects'),
     $modal = $('#project-modal'),
     $modalBody = $('.modal-body'),
     $closeModalBtn = $('.close');
@@ -182,9 +182,9 @@ var $projects = $('.projects'),
 var projectsConstructor = (function() {
 
   // Add a container card to the projects section
-  var projectsContainer = document.createElement("div");
-  projectsContainer.className = "projects-card card";
-  $projects.appendChild(projectsContainer);
+  var projectsCard = document.createElement("div");
+  projectsCard.className = "projects-card card";
+  $projectSection.appendChild(projectsCard);
 
   // Save a reference to the project section's card
   var $projectsCard = $(".projects-card");
@@ -194,6 +194,14 @@ var projectsConstructor = (function() {
       workHeaderTxt = document.createTextNode("-work-");
   workHeader.appendChild(workHeaderTxt);
   $projectsCard.appendChild(workHeader);
+
+  // Add a projects container to hold the project cards
+  var projectsContainer = document.createElement("div");
+  projectsContainer.className = "projects-container";
+  $projectsCard.appendChild(projectsContainer);
+
+  // Save a reference to the project container
+  var $projectsContainer = $(".projects-container");
 
   // Cache the length of the project data
   var projectsLength = projects.project.length;
@@ -212,10 +220,10 @@ var projectsConstructor = (function() {
   // Load project cards to the work section
   function loadProjects(project) {
 
-    // Create a project card and add to the projects card
+    // Create a project card and add to the projects container
     var projectContainer = document.createElement("div");
     projectContainer.className = project.cssClass + "-card project";
-    $projectsCard.appendChild(projectContainer);
+    $projectsContainer.appendChild(projectContainer);
 
     // Save ref to the current project card
     var $projectCard = $("." + project.cssClass + "-card");
