@@ -90,14 +90,15 @@ div.about div {
 }
 
 div.skill {
+  height: 210px;
+  text-align: center;
   padding: 5px 20px;
 }
 
 div.skill img {
   display: block;
   margin: auto;
-  height: 90px;
-  width: 90px;
+  width: 60px;
 }
 
 div.projects-card {
