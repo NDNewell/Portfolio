@@ -3,6 +3,10 @@ div.container {
   margin-top: 50px;
 }
 
+div.about div {
+  padding: 5px 75px 20px;
+}
+
 div.skill {
   font-size: 14px;
 }
