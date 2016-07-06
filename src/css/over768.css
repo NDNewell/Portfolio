@@ -34,14 +34,20 @@ div.projects-container {
 }
 
 div.modal {
-  padding-top: 100px;
   background-color: rgba(0,0,0,0.7);
+}
+
+div.modal-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 div.modal-content {
   position: relative;
+  height: initial;
+  overflow: initial;
   margin: auto;
-  height: 80%;
   width: 700px;
   background-color: #fff;
   padding: 0;
@@ -66,17 +72,26 @@ div.modal-content {
 }
 
 div.modal-header {
-  position: static;
-  width: initial;
+  position: absolute;
+  width: 100%;
   height: 55px;
-  padding: 2px 16px;
+  padding: 0;
   background-color: #9d9c9c;
   color: white;
 }
 
+div.modal-header span {
+  float: none;
+  margin: 6px 0px 0px 15px;
+}
+
+div.modal-body-container {
+  height: 100%;
+}
+
 div.modal-body {
   margin: 0;
-  padding: 20px 5px 5px;
+  padding: 65px 5px 5px;
 }
 
 div.modal-img-container {
@@ -88,6 +103,7 @@ div.modal-img-container img {
 }
 
 div.modal-txt-container {
+  font-size: 14px;
   padding: 20px;
 }
 
