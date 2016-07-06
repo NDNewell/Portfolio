@@ -289,34 +289,50 @@ var modalConstructor = function (project) {
   // Add necessary DOM elements for constructing the modal
   // Add project information to each section
 
+  // Add an image container for the project banner
+  var imgContainer = document.createElement("div");
+  imgContainer.className = "modal-img-container";
+  $modalBody.appendChild(imgContainer);
+
+  // Save a ref to the img container
+  var $imgContainer = $(".modal-img-container");
+
   // Add banner image for the project
   var projectImg = document.createElement("img");
   projectImg.src = project.modalBanner;
   projectImg.alt = project.bannerDescription;
-  $modalBody.appendChild(projectImg);
+  $imgContainer.appendChild(projectImg);
+
+  // Add an txt container for the project banner
+  var txtContainer = document.createElement("div");
+  txtContainer.className = "modal-txt-container";
+  $modalBody.appendChild(txtContainer);
+
+  // Save a ref to the img container
+  var $txtContainer = $(".modal-txt-container");
 
   // Add the project name
   var projectName = document.createElement("h3"),
       projectNameTxt = document.createTextNode(project.projectName);
   projectName.appendChild(projectNameTxt);
-  $modalBody.appendChild(projectName);
+  $txtContainer.appendChild(projectName);
 
   // Add the project description
   var projectDesc = document.createElement("p"),
       projectDescTxt = document.createTextNode(project.projectDescription);
   projectDesc.appendChild(projectDescTxt);
-  $modalBody.appendChild(projectDesc);
+  $txtContainer.appendChild(projectDesc);
 
   // Add a header for the list of project bullet points
   var listHeader = document.createElement("hX"),
       listHeaderTxt = document.createTextNode("The project focused on:");
   listHeader.appendChild(listHeaderTxt);
-  $modalBody.appendChild(listHeader);
+  $txtContainer.appendChild(listHeader);
 
   // Create an empty unordered list
   var list = document.createElement("ul");
   list.className = project.cssClass + "-ul-list";
-  $modalBody.appendChild(list);
+  $txtContainer.appendChild(list);
 
   // Cache ref to unordered list
   var infoBulletsLength = project.infoBullets.length,
@@ -334,7 +350,7 @@ var modalConstructor = function (project) {
   // Add a container to hold an svg image link to the project
   var linkContainer = document.createElement("div");
   linkContainer.className = "link-container";
-  $modalBody.appendChild(linkContainer);
+  $txtContainer.appendChild(linkContainer);
 
   // Save a ref to the link container
   var $modalLinkContainer = $(".link-container");

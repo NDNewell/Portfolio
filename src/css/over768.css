@@ -33,3 +33,73 @@ div.projects-container {
   width: 50%;
 }
 
+div.modal {
+  padding-top: 100px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+div.modal-content {
+  position: relative;
+  margin: auto;
+  height: 80%;
+  width: 700px;
+  background-color: #fff;
+  padding: 0;
+}
+
+
+.close {
+  position: absolute;
+  bottom: initial;
+  margin-top: 5px;
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+div.modal-header {
+  position: static;
+  width: initial;
+  height: 55px;
+  padding: 2px 16px;
+  background-color: #9d9c9c;
+  color: white;
+}
+
+div.modal-body {
+  margin: 0;
+  padding: 20px 5px 5px;
+}
+
+div.modal-img-container {
+  text-align: center;
+}
+
+div.modal-img-container img {
+  width: 344px;
+}
+
+div.modal-txt-container {
+  padding: 20px;
+}
+
+div.link-container {
+  text-align: center;
+}
+
+div.link-container img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+
+

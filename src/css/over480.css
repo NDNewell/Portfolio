@@ -42,3 +42,9 @@ table {
   margin-bottom: 15px;
   width: 433px;
 }
+
+div.modal-content {
+  background-color: #fff;
+}
+
+
