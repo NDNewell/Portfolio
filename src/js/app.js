@@ -174,6 +174,7 @@ drawer.addEventListener('click', function(e) {
 // as well as the project modals
 var $projectSection = $('.projects'),
     $modal = $('#project-modal'),
+    $modalContainer = $('.modal-container'),
     $modalBody = $('.modal-body'),
     $closeModalBtn = $('.close');
 
@@ -384,7 +385,7 @@ $closeModalBtn.addEventListener("click", function(e) {
 window.addEventListener("click", function(e) {
 
   // If clicking the outside of the modal, close it
-  if(e.target == $modal) {
+  if(e.target == $modalContainer) {
 
     // Clear modal of all data
     clearModal();
