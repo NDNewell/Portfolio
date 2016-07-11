@@ -59,6 +59,7 @@ a#menu svg {
 }
 
 .container {
+  position: relative;
   margin-top: 50px;
   height: 100%;
   width: 100%;

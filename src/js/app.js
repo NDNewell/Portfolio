@@ -404,4 +404,45 @@ function clearModal() {
     document.body.style.overflow = "visible";
 }
 
+var $sliderMenu = getNthChild($("#drawer"), 0),
+    $menuAbout = getNthChild($sliderMenu, 0),
+    $menuSkills = getNthChild($sliderMenu, 1),
+    $menuWork = getNthChild($sliderMenu, 2),
+    $body = document.getElementsByTagName("BODY")[0],
+    $projectSection = $(".projects"),
+    $skillsSection = $(".stack"),
+    $aboutSection = $(".about");
 
+$menuAbout.addEventListener("click", function(e) {
+  $body.scrollTop = $aboutSection.offsetTop + 2;
+});
+
+$menuSkills.addEventListener("click", function(e) {
+  $body.scrollTop = $skillsSection.offsetTop + 2;
+});
+
+$menuWork.addEventListener("click", function(e) {
+  $body.scrollTop = $projectSection.offsetTop + 2;
+});
+
+// Helper function to get an element's exact position
+function getPosition(el) {
+
+  var position = 0;
+
+  while (el) {
+    if (el.tagName == "BODY") {
+
+      var yScroll = el.scrollTop || document.documentElement.scrollTop;
+      position += (el.offsetTop - yScroll + el.clientTop);
+
+    } else {
+
+      position += (el.offsetTop - el.scrollTop + el.clientTop);
+    }
+
+    el = el.offsetParent;
+  }
+  return position;
+
+}
