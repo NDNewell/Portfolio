@@ -23,14 +23,7 @@ div.skill {
 
 div.projects-container {
   margin: auto;
-  width: 727px;
-}
-
-.project-one,
-.project-two,
-.project-three,
-.project-four {
-  width: 50%;
+  width: 100%;
 }
 
 div.modal {

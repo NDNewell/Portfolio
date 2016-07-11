@@ -234,27 +234,6 @@ var projectsConstructor = (function() {
     projectImg.src = project.modalBanner;
     projectImg.alt = project.bannerDescription;
     $projectCard.appendChild(projectImg);
-
-    // Add the project description
-    var projDesc = document.createElement("p"),
-        projDescTxt = document.createTextNode(project.shortDescription);
-    projDesc.appendChild(projDescTxt);
-    $projectCard.appendChild(projDesc);
-
-    // Add the more info button
-    var projBtn = document.createElement("button");
-    projBtn.type = "button";
-    projBtn.className = project.cssClass + "-info-btn";
-    var projBtnTxt = document.createTextNode("more info");
-    projBtn.appendChild(projBtnTxt);
-    $projectCard.appendChild(projBtn);
-
-    // Save a ref to the project's more info button on the currently iterated
-    // project
-    var $moreInfoBtn = $("." + project.cssClass + "-info-btn");
-
-    // Pass the currently iterated button and project to add evt listeners
-    addListener($moreInfoBtn, project);
   }
 
   // Add event listeners to each button
@@ -404,6 +383,9 @@ function clearModal() {
     document.body.style.overflow = "visible";
 }
 
+
+
+// Create refs to portfolio sections and menu links
 var $sliderMenu = getNthChild($("#drawer"), 0),
     $menuAbout = getNthChild($sliderMenu, 0),
     $menuSkills = getNthChild($sliderMenu, 1),
@@ -413,6 +395,8 @@ var $sliderMenu = getNthChild($("#drawer"), 0),
     $skillsSection = $(".stack"),
     $aboutSection = $(".about");
 
+// Add event listeners to each menu link
+// When clicking a link, the page is scrolled to the appropriate section
 $menuAbout.addEventListener("click", function(e) {
   $body.scrollTop = $aboutSection.offsetTop + 2;
 });
@@ -424,25 +408,3 @@ $menuSkills.addEventListener("click", function(e) {
 $menuWork.addEventListener("click", function(e) {
   $body.scrollTop = $projectSection.offsetTop + 2;
 });
-
-// Helper function to get an element's exact position
-function getPosition(el) {
-
-  var position = 0;
-
-  while (el) {
-    if (el.tagName == "BODY") {
-
-      var yScroll = el.scrollTop || document.documentElement.scrollTop;
-      position += (el.offsetTop - yScroll + el.clientTop);
-
-    } else {
-
-      position += (el.offsetTop - el.scrollTop + el.clientTop);
-    }
-
-    el = el.offsetParent;
-  }
-  return position;
-
-}
