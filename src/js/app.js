@@ -234,16 +234,19 @@ var projectsConstructor = (function() {
     projectImg.src = project.modalBanner;
     projectImg.alt = project.bannerDescription;
     $projectCard.appendChild(projectImg);
+
+    // Pass the currently iterated button and project to add evt listeners
+    addListener($projectCard, project);
   }
 
   // Add event listeners to each button
   // Each button will populate the modal with the appropriate data and
   // make the modal visible
-  function addListener(btn, project) {
+  function addListener(card, project) {
 
     // Add an event listener to the currently iterated button and pass
     // the currently iterated project to the inner function
-    btn.addEventListener('click', (function(e) {
+    card.addEventListener('click', (function(e) {
 
       // Use a closure to save the current state of data passed to the evt
       // listener

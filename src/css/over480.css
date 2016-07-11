@@ -28,8 +28,8 @@ div.projects-container {
 div.project {
   width: 50%;
   margin-bottom: -6px;
+  cursor: pointer;
 }
-
 
 div.project img {
   width: 100%;
