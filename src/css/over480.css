@@ -20,15 +20,13 @@ div.technology {
   margin: 0px 8px 8px 4px;
 }
 
-div.projects-container {
-  display: flex;
-  flex-wrap: wrap;
+div.project {
+  margin-bottom: -13px;
+  width: 50%;
 }
 
-div.project {
-  width: 50%;
-  margin-bottom: -6px;
-  cursor: pointer;
+div.projects-container {
+  background-color: initial;
 }
 
 div.project img {
@@ -37,7 +35,6 @@ div.project img {
 
 table {
   margin: auto;
-  margin-bottom: 15px;
   width: 433px;
 }
 

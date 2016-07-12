@@ -190,12 +190,6 @@ var projectsConstructor = (function() {
   // Save a reference to the project section's card
   var $projectsCard = $(".projects-card");
 
-  // Add a heading to the project section
-  var workHeader = document.createElement("h3"),
-      workHeaderTxt = document.createTextNode("-work-");
-  workHeader.appendChild(workHeaderTxt);
-  $projectsCard.appendChild(workHeader);
-
   // Add a projects container to hold the project cards
   var projectsContainer = document.createElement("div");
   projectsContainer.className = "projects-container";
@@ -234,6 +228,16 @@ var projectsConstructor = (function() {
     projectImg.src = project.modalBanner;
     projectImg.alt = project.bannerDescription;
     $projectCard.appendChild(projectImg);
+
+    var hoverTextContainer = document.createElement("div");
+    $projectCard.appendChild(hoverTextContainer);
+
+    $hoverTextContainer = getNthChild($projectCard, 1);
+
+    var hoverText = document.createElement("p"),
+        hoverTextTxt = document.createTextNode(project.shortDescription);
+    hoverText.appendChild(hoverTextTxt);
+    $hoverTextContainer.appendChild(hoverText);
 
     // Pass the currently iterated button and project to add evt listeners
     addListener($projectCard, project);
@@ -391,8 +395,8 @@ function clearModal() {
 // Create refs to portfolio sections and menu links
 var $sliderMenu = getNthChild($("#drawer"), 0),
     $menuAbout = getNthChild($sliderMenu, 0),
-    $menuSkills = getNthChild($sliderMenu, 1),
-    $menuWork = getNthChild($sliderMenu, 2),
+    $menuWork = getNthChild($sliderMenu, 1),
+    $menuSkills = getNthChild($sliderMenu, 2),
     $body = document.getElementsByTagName("BODY")[0],
     $projectSection = $(".projects"),
     $skillsSection = $(".stack"),
