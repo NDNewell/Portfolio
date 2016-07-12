@@ -47,15 +47,49 @@ nav div {
   color: white;
 }
 
+nav div p {
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+nav div p:first-child {
+  width: 73px;
+}
+
+nav div p:first-child + p {
+  width: 60px;
+}
+
+nav div p:first-child + p + p {
+  width: 90px;
+}
+
+nav div p:first-child + p + p + p {
+  width: 32px;
+}
+
+
 div a {
   text-decoration: none;
   color: white;
+}
+
+nav div div {
+  display: inline;
+  padding: 0;
+}
+
+nav div div a img {
+  height: 75px;
+  width: 75px;
 }
 
 a#menu svg {
   margin: -1px 0px 0px 6px;
   width: 40px;
   fill: #000;
+  cursor: pointer;
 }
 
 .container {

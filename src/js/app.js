@@ -160,14 +160,12 @@ var projects = {
 menu.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
-  document.body.style.overflow = "hidden";
 });
 
 // Close drawer upon clicking drawer
 drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
-  document.body.style.overflow = "visible";
 });
 
 // Cache a reference to elements needed to construct project elems
@@ -389,8 +387,6 @@ function clearModal() {
     // Re-enable scrolling for main page
     document.body.style.overflow = "visible";
 }
-
-
 
 // Create refs to portfolio sections and menu links
 var $sliderMenu = getNthChild($("#drawer"), 0),

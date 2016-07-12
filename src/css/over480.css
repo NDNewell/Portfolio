@@ -38,8 +38,14 @@ table {
   width: 433px;
 }
 
+div.social img {
+  padding: 0 5px;
+}
+
+div.social a img:hover {
+  fill: #fff;
+}
+
 div.modal-content {
   background-color: #fff;
 }
-
-

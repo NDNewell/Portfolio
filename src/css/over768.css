@@ -5,7 +5,11 @@ nav {
 
 nav div {
   padding-top: 40px;
-  font-size: 1.5em;
+}
+
+nav div div {
+  display: block;
+  padding: 0;
 }
 
 div.container {
