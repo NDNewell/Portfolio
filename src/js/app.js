@@ -422,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var localStorage = window.localStorage,
           portPicsVersionCached = localStorage.getItem('portPicsVersion'),
-          portPicsVersion = 1;
+          portPicsVersion = 2;
 
       if(portPicsVersionCached == portPicsVersion) {
 
