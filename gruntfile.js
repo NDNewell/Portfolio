@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         //'processhtml',
         'validation',
         'htmlmin',
-        //'svgstore',
+        'svgstore',
         'svgmin',
         //'sprity',
         'cssmin',

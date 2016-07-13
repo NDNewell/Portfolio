@@ -69,6 +69,10 @@ nav div p:first-child + p + p + p {
   width: 32px;
 }
 
+nav div p:hover,
+nav div p a:hover {
+  color: #5CBDE2;
+}
 
 div a {
   text-decoration: none;
@@ -80,9 +84,13 @@ nav div div {
   padding: 0;
 }
 
-nav div div a img {
+nav div div a svg {
   height: 75px;
   width: 75px;
+}
+
+nav div div a svg:hover {
+  fill: #5CBDE2;
 }
 
 a#menu svg {

@@ -411,3 +411,91 @@ $menuSkills.addEventListener("click", function(e) {
 $menuWork.addEventListener("click", function(e) {
   $body.scrollTop = $projectSection.offsetTop + 2;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    var data,
+        xhr,
+        localStorageEnabled = true;
+
+    try {
+
+      var localStorage = window.localStorage,
+          portPicsVersionCached = localStorage.getItem('portPicsVersion'),
+          portPicsVersion = 1;
+
+      if(portPicsVersionCached == portPicsVersion) {
+
+        console.log('get external svg sprite sheet from local storage');
+
+        data = localStorage.portfolioSVGdata;
+
+        inlineSVGSprites(data);
+
+      } else if (portPicsVersionCached !== portPicsVersion || portPicsVersionCached === null) {
+
+        getSVGData();
+
+      }
+
+    } catch (e) {
+
+        console.log('local storage disabled (' + e + ')');
+
+        localStorageEnabled = false;
+
+        getSVGData();
+    }
+
+    function getSVGData() {
+
+      var readError = setTimeout(function() {
+          console.log('get external svg sprite sheet failed');
+      }, 5000);
+
+      xhr = new XMLHttpRequest();
+      xhr.open('GET', '/img/svg_sprites.svg', true);
+      xhr.onload = function () {
+
+        if(xhr.status >= 200 && xhr.status < 400) {
+
+          data = xhr.responseText;
+
+          clearTimeout(readError);
+
+          console.log('get external svg sprite sheet from server');
+
+          // Load sprites into the DOM
+          inlineSVGSprites(data);
+
+          // If local storage is available save the external sprite
+          // sheet as well as its current version number.
+          if(localStorageEnabled) {
+              saveSVGData(data);
+          }
+        }
+      };
+      xhr.send();
+    }
+
+    // Load the external svg sprite sheet into the DOM so that it
+    // is an inlined svg sprite sheet
+    function inlineSVGSprites(data) {
+
+        // After inlining, hide it
+        $body.insertAdjacentHTML('afterbegin', data);
+
+        var $svgSprites = getNthChild($body, 0);
+
+        $svgSprites.style.display = "none";
+    }
+
+    // Save the external svg sprite sheet to local storage
+    function saveSVGData(data) {
+
+        console.log('save external svg sprite sheet to local storage');
+
+        localStorage.portfolioSVGdata = data;
+        localStorage.portPicsVersion = portPicsVersion;
+    }
+});

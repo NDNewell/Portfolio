@@ -54,7 +54,7 @@ module.exports = function (grunt, config) {
                 },
                 src: ['dist/img/jpg/']
             }
-        },
+        },*/
         svgstore: {
             options: {
                 cleanup: false,
@@ -66,10 +66,10 @@ module.exports = function (grunt, config) {
             },
             default : {
                 files: {
-                    'foo/img/svg/svg_sprites.svg': 'src/img/svg/*.svg'
+                    'dist/img/svg_sprites.svg': 'src/img/*.svg'
                 }
             }
-        },*/
+        },
         svgmin: {
             options: {
                 plugins: [
@@ -111,7 +111,7 @@ module.exports = function (grunt, config) {
                     'grunt_tasks/image.js'
                 ],
                 tasks: [
-                    //'svgstore',
+                    'svgstore',
                     'svgmin'
                 ]
             }/*,
