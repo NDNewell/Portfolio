@@ -146,9 +146,7 @@ div.title h3 {
 }
 
 div.about h3,
-div.skills h3,
-div.projects h3,
-div.stack h3 {
+div.skills h3 {
   color: #5CBDE2;
 }
 
@@ -189,7 +187,8 @@ div.project {
   cursor: pointer;
 }
 
-div.project img {
+div.project img,
+div.project svg {
   width: 100%;
   -webkit-filter: brightness(100%);
   -webkit-transition: 500ms;
@@ -198,7 +197,8 @@ div.project img {
   transition: 500ms;
 }
 
-div.project:hover img {
+div.project:hover img,
+div.project:hover svg {
   -webkit-filter: brightness(20%);
 }
 
@@ -348,7 +348,7 @@ div.link-container {
   text-align: center;
 }
 
-div.link-container img {
+div.link-container svg {
   height: 50px;
   width: 50px;
   cursor: pointer;

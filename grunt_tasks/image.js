@@ -82,24 +82,6 @@ module.exports = function (grunt, config) {
             },
             dist: {
                 files: {
-                    'dist/img/JavaScript.svg': 'src/img/JavaScript.svg',
-                    'dist/img/Bootstrap.svg': 'src/img/Bootstrap.svg',
-                    'dist/img/CSS3.svg': 'src/img/CSS3.svg',
-                    'dist/img/HTML5.svg': 'src/img/HTML5.svg',
-                    'dist/img/jQuery.svg': 'src/img/jQuery.svg',
-                    'dist/img/knockout.svg': 'src/img/knockout.svg',
-                    'dist/img/github.svg': 'src/img/github.svg',
-                    'dist/img/grunt.svg': 'src/img/grunt.svg',
-                    'dist/img/firebase.svg': 'src/img/firebase.svg',
-                    'dist/img/code.svg': 'src/img/code.svg',
-                    'dist/img/flow-tree.svg': 'src/img/flow-tree.svg',
-                    'dist/img/colours.svg': 'src/img/colours.svg',
-                    'dist/img/surflist_banner.svg': 'src/img/surflist_banner.svg',
-                    'dist/img/udacifeeds.svg': 'src/img/udacifeeds.svg',
-                    'dist/img/twitter-with-circle.svg': 'src/img/twitter-with-circle.svg',
-                    'dist/img/linkedin-with-circle.svg': 'src/img/linkedin-with-circle.svg',
-                    'dist/img/github-with-circle.svg': 'src/img/github-with-circle.svg',
-                    'dist/img/mail-with-circle.svg': 'src/img/mail-with-circle.svg',
                     'dist/img/publish.svg': 'src/img/publish.svg'
                 }
             }

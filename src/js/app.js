@@ -82,8 +82,7 @@ var projects = {
     "project": [
         {
           "projectName": "SURFLIST",
-          "modalBanner": "/img/surflist_banner.svg",
-          "bannerDescription": "surflist banner",
+          "modalBanner": '<img alt="surflist banner" src="/img/surflist_banner.svg">',
           "shortDescription": "made a wave finder app for surfers",
           "projectDescription":
               "This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.",
@@ -103,8 +102,7 @@ var projects = {
         },
         {
           "projectName": "CARTMAN CRUSH",
-          "modalBanner": "/img/cartmancrush_banner.png",
-          "bannerDescription": "cartman crush banner",
+          "modalBanner": '<img alt="cartman crush banner" src="/img/cartmancrush_banner.png">',
           "shortDescription": "created a frogger-like arcade game",
           "projectDescription":
               "This is a desktop-based Frogger-like game where the player, Eric Cartman, must navigate a street filled with killer bugs in order to reach the water on the opposite side.",
@@ -119,8 +117,7 @@ var projects = {
         },
         {
           "projectName": "UdaciFeeds",
-          "modalBanner": "/img/udacifeeds.svg",
-          "bannerDescription": "udacifeeds banner",
+          "modalBanner": '<img alt="udacifeeds banner" src="/img/udacifeeds.svg">',
           "shortDescription": "completed testing for this web app",
           "projectDescription":
               "This project consisted of being given a web-based application that reads RSS feeds. The original developer included an incomplete testing suite using Jasmine. The project aim was to complete the testing suite by writing tests that pass.",
@@ -137,8 +134,7 @@ var projects = {
         },
         {
           "projectName": "Web Performance Optimization",
-          "modalBanner": "/img/perfopt.jpg",
-          "bannerDescription": "web performance optimization banner",
+          "modalBanner": '<img alt="web performance optimization banner" src="/img/perfopt.jpg">',
           "shortDescription": "optimized loading and performance",
           "projectDescription":
               "This project involved being provided two websites with performance related issues. For Cam's Profile website, the goal was to optimize the page loading speed to a PageSpeed score of above 90. For Cam's Pizzeria website, the goal was to increase the frames per second (FPS) to 60+ by reviewing and replacing inefficient code with more succinct constructions.",
@@ -181,17 +177,13 @@ var $projectSection = $('.projects'),
 var projectsConstructor = (function() {
 
   // Add a container card to the projects section
-  var projectsCard = document.createElement("div");
-  projectsCard.className = "projects-card card";
-  $projectSection.appendChild(projectsCard);
+  $projectSection.insertAdjacentHTML('beforeend', '<div class="projects-card card"></div>');
 
   // Save a reference to the project section's card
   var $projectsCard = $(".projects-card");
 
   // Add a projects container to hold the project cards
-  var projectsContainer = document.createElement("div");
-  projectsContainer.className = "projects-container";
-  $projectsCard.appendChild(projectsContainer);
+  $projectsCard.insertAdjacentHTML('beforeend', '<div class="projects-container"></div>');
 
   // Save a reference to the project container
   var $projectsContainer = $(".projects-container");
@@ -214,28 +206,19 @@ var projectsConstructor = (function() {
   function loadProjects(project) {
 
     // Create a project card and add to the projects container
-    var projectContainer = document.createElement("div");
-    projectContainer.className = project.cssClass + "-card project";
-    $projectsContainer.appendChild(projectContainer);
+    $projectsContainer.insertAdjacentHTML('beforeend', '<div class="' + project.cssClass + '-card project"></div>');
 
     // Save ref to the current project card
     var $projectCard = $("." + project.cssClass + "-card");
 
     // Add the projects banner image
-    var projectImg = document.createElement("img");
-    projectImg.src = project.modalBanner;
-    projectImg.alt = project.bannerDescription;
-    $projectCard.appendChild(projectImg);
+    $projectCard.insertAdjacentHTML('beforeend', project.modalBanner);
 
-    var hoverTextContainer = document.createElement("div");
-    $projectCard.appendChild(hoverTextContainer);
+    $projectCard.insertAdjacentHTML('beforeend', '<div></div>');
 
     $hoverTextContainer = getNthChild($projectCard, 1);
 
-    var hoverText = document.createElement("p"),
-        hoverTextTxt = document.createTextNode(project.shortDescription);
-    hoverText.appendChild(hoverTextTxt);
-    $hoverTextContainer.appendChild(hoverText);
+    $hoverTextContainer.insertAdjacentHTML('beforeend', '<p>' + project.shortDescription + '</p>');
 
     // Pass the currently iterated button and project to add evt listeners
     addListener($projectCard, project);
@@ -275,49 +258,31 @@ var modalConstructor = function (project) {
   // Add project information to each section
 
   // Add an image container for the project banner
-  var imgContainer = document.createElement("div");
-  imgContainer.className = "modal-img-container";
-  $modalBody.appendChild(imgContainer);
+  $modalBody.insertAdjacentHTML('beforeend', '<div class="modal-img-container"></div>');
 
   // Save a ref to the img container
   var $imgContainer = $(".modal-img-container");
 
   // Add banner image for the project
-  var projectImg = document.createElement("img");
-  projectImg.src = project.modalBanner;
-  projectImg.alt = project.bannerDescription;
-  $imgContainer.appendChild(projectImg);
+  $imgContainer.insertAdjacentHTML('beforeend', project.modalBanner);
 
   // Add an txt container for the project banner
-  var txtContainer = document.createElement("div");
-  txtContainer.className = "modal-txt-container";
-  $modalBody.appendChild(txtContainer);
+  $modalBody.insertAdjacentHTML('beforeend', '<div class="modal-txt-container"></div>');
 
   // Save a ref to the img container
   var $txtContainer = $(".modal-txt-container");
 
   // Add the project name
-  var projectName = document.createElement("h3"),
-      projectNameTxt = document.createTextNode(project.projectName);
-  projectName.appendChild(projectNameTxt);
-  $txtContainer.appendChild(projectName);
+  $txtContainer.insertAdjacentHTML('beforeend', '<h3>' + project.projectName + '</h3>');
 
   // Add the project description
-  var projectDesc = document.createElement("p"),
-      projectDescTxt = document.createTextNode(project.projectDescription);
-  projectDesc.appendChild(projectDescTxt);
-  $txtContainer.appendChild(projectDesc);
+  $txtContainer.insertAdjacentHTML('beforeend', '<p>' + project.projectDescription + '</p>');
 
   // Add a header for the list of project bullet points
-  var listHeader = document.createElement("hX"),
-      listHeaderTxt = document.createTextNode("The project focused on:");
-  listHeader.appendChild(listHeaderTxt);
-  $txtContainer.appendChild(listHeader);
+  $txtContainer.insertAdjacentHTML('beforeend', '<hX>The project focused on:</hX>');
 
   // Create an empty unordered list
-  var list = document.createElement("ul");
-  list.className = project.cssClass + "-ul-list";
-  $txtContainer.appendChild(list);
+  $txtContainer.insertAdjacentHTML('beforeend', '<ul class="' + project.cssClass + '-ul-list"></ul>');
 
   // Cache ref to unordered list
   var infoBulletsLength = project.infoBullets.length,
@@ -326,35 +291,23 @@ var modalConstructor = function (project) {
   // Add project bullet info to the unordered list
   for (var i = 0; i < infoBulletsLength; i++) {
 
-    var listItem = document.createElement("li"),
-        listItemTxt = document.createTextNode(project.infoBullets[i]);
-    listItem.appendChild(listItemTxt);
-    $listHead.appendChild(listItem);
+    $listHead.insertAdjacentHTML('beforeend', '<li>' + project.infoBullets[i] + '</li>');
   }
 
   // Add a container to hold an svg image link to the project
-  var linkContainer = document.createElement("div");
-  linkContainer.className = "link-container";
-  $txtContainer.appendChild(linkContainer);
+  $txtContainer.insertAdjacentHTML('beforeend', '<div class="link-container"></div>');
 
   // Save a ref to the link container
   var $modalLinkContainer = $(".link-container");
 
   // Add a link to the project that opens in a new window
-  var extLink = document.createElement("a");
-  extLink.href = project.externalLink;
-  extLink.target = "_blank";
-  extLink.className = project.cssClass + "-link";
-  $modalLinkContainer.appendChild(extLink);
+  $modalLinkContainer.insertAdjacentHTML('beforeend', '<a href="'+ project.externalLink + '" target="_blank" class="' + project.cssClass + '-link"></a>');
 
   // Save a ref to external link elem
   $extLinkElem = $("." + project.cssClass + "-link");
 
   // Add img that opens the external link when clicked
-  var linkImg = document.createElement("img");
-  linkImg.src = "/img/publish.svg";
-  linkImg.alt = "link to project icon";
-  $extLinkElem.appendChild(linkImg);
+  $extLinkElem.insertAdjacentHTML('beforeend', '<svg alt="link to project icon"><use xlink:href="#publish"/></svg>');
 };
 
 // Close the modal when the close modal button is clicked
@@ -422,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var localStorage = window.localStorage,
           portPicsVersionCached = localStorage.getItem('portPicsVersion'),
-          portPicsVersion = 2;
+          portPicsVersion = 1;
 
       if(portPicsVersionCached == portPicsVersion) {
 
