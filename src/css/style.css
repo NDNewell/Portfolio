@@ -162,15 +162,15 @@ div.skill {
   padding: 5px 20px;
 }
 
-div.skill img {
+div.skill svg {
   display: block;
   margin: auto;
+  height: 60px;
   width: 60px;
 }
 
 div.projects-card {
   padding: 0;
-
 }
 
 div.projects-container {
