@@ -1,19 +1,2 @@
-div.social,
-div.contact {
-  width: 50%;
-}
 
-div.contact {
-  order: 1;
-}
-
-div.social {
-  text-align: right;
-  order: 2;
-}
-
-div.footer-card {
-  display: flex;
-  flex-wrap: flex;
-}
 
