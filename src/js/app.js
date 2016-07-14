@@ -82,7 +82,7 @@ var projects = {
     "project": [
         {
           "projectName": "SURFLIST",
-          "modalBanner": '<img alt="surflist banner" src="img/surflist_banner.svg">',
+          "modalBanner": '<img alt="surflist banner" src="img/surflist_banner.png">',
           "shortDescription": "made a wave finder app for surfers",
           "projectDescription":
               "This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.",
