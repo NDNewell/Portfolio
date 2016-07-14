@@ -82,7 +82,7 @@ var projects = {
     "project": [
         {
           "projectName": "SURFLIST",
-          "modalBanner": '<img alt="surflist banner" src="/img/surflist_banner.svg">',
+          "modalBanner": '<img alt="surflist banner" src="img/surflist_banner.svg">',
           "shortDescription": "made a wave finder app for surfers",
           "projectDescription":
               "This is a single-page, responsive web application built from scratch where surfers can discover waves that fit their individual needs and criteria. Users can find a new wave break simply by scrolling through the list of locations. Locations are also searchable and can be explored via Google maps.",
@@ -103,7 +103,7 @@ var projects = {
         },
         {
           "projectName": "CARTMAN CRUSH",
-          "modalBanner": '<img alt="cartman crush banner" src="/img/cartmancrush_banner.png">',
+          "modalBanner": '<img alt="cartman crush banner" src="img/cartmancrush_banner.png">',
           "shortDescription": "created a frogger-like arcade game",
           "projectDescription":
               "This is a desktop-based Frogger-like game where the player, Eric Cartman, must navigate a street filled with killer bugs in order to reach the water on the opposite side.",
@@ -119,7 +119,7 @@ var projects = {
         },
         {
           "projectName": "UdaciFeeds",
-          "modalBanner": '<img alt="udacifeeds banner" src="/img/udacifeeds.svg">',
+          "modalBanner": '<img alt="udacifeeds banner" src="img/udacifeeds.svg">',
           "shortDescription": "completed testing for this web app",
           "projectDescription":
               "This project consisted of being given a web-based application that reads RSS feeds. The original developer included an incomplete testing suite using Jasmine. The project aim was to complete the testing suite by writing tests that pass.",
@@ -137,7 +137,7 @@ var projects = {
         },
         {
           "projectName": "Web Performance Optimization",
-          "modalBanner": '<img alt="web performance optimization banner" src="/img/perfopt.jpg">',
+          "modalBanner": '<img alt="web performance optimization banner" src="img/perfopt.jpg">',
           "shortDescription": "optimized loading and performance",
           "projectDescription":
               "This project involved being provided two websites with performance related issues. For Cam's Profile website, the goal was to optimize the page loading speed to a PageSpeed score of above 90. For Cam's Pizzeria website, the goal was to increase the frames per second (FPS) to 60+ by reviewing and replacing inefficient code with more succinct constructions.",
