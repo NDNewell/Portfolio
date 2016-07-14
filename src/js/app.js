@@ -198,6 +198,7 @@ var $projectSection = $('.projects'),
     $modal = $('#project-modal'),
     $modalContainer = $('.modal-container'),
     $modalBody = $('.modal-body'),
+    $modalContent = $('.modal-content'),
     $closeModalBtn = $('.close');
 
 // Self executing function that populates the DOM with project a list of
@@ -346,10 +347,20 @@ var modalConstructor = function (project) {
   // Add img that opens the external link when clicked
   $ghLinkElem.insertAdjacentHTML('beforeend', '<svg alt="link to github repository icon"><use xlink:href="#github"/></svg>');
 
-  // Scroll to top of the page once modal is constructed if on a mobile device
-  if(touchScreen && window.innerWidth < 769) {
+  // Scroll to top of the modal page once modal is constructed if on a small
+  // device
+  if(window.innerWidth <= 768) {
 
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      var setScrollTop = setInterval(function() {
+
+        if($modalContent.scrollHeight > 0) {
+
+          clearInterval(setScrollTop);
+
+          $modalContent.scrollTop = 0;
+        }
+
+      }, 100);
   }
 };
 
