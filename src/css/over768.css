@@ -81,36 +81,8 @@ div.modal-content {
   padding: 0;
 }
 
-
-.close {
-  position: absolute;
-  bottom: initial;
-  margin-top: 5px;
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 div.modal-header {
   position: absolute;
-  width: 100%;
-  height: 55px;
-  padding: 0;
-  background-color: #9d9c9c;
-  color: white;
-}
-
-div.modal-header span {
-  float: none;
-  margin: 6px 0px 0px 15px;
 }
 
 div.modal-body-container {
@@ -119,7 +91,7 @@ div.modal-body-container {
 
 div.modal-body {
   margin: 0;
-  padding: 65px 5px 5px;
+  padding: 60px 5px 5px;
 }
 
 div.modal-img-container {

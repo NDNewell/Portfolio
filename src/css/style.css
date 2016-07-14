@@ -327,12 +327,26 @@ div.modal-content {
   to {top:0; opacity:1}
 }
 
-.close {
-  position: absolute;
-  bottom: 15px;
+div.modal-header {
+  position: fixed;
+  display: table;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background-color: #9d9c9c;
   color: white;
-  font-size: 28px;
-  font-weight: bold;
+}
+
+div.modal-header div {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+.close {
+  color: white;
+  font-size: 29px;
 }
 
 .close:hover,
@@ -342,19 +356,9 @@ div.modal-content {
   cursor: pointer;
 }
 
-div.modal-header {
-  position: fixed;
-  width: 100%;
-  height: 55px;
-  top: 0;
-  left: 0;
-  padding: 2px 16px;
-  background-color: #9d9c9c;
-  color: white;
-}
 
 div.modal-body {
-  margin: 65px 8px 8px 8px;
+  margin: 50px 8px 8px 8px;
   padding: 5px;
   background-color: white;
 }
