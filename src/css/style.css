@@ -20,6 +20,10 @@ div.header {
   background-color: #9d9c9c;
 }
 
+a#menu svg:active {
+  fill: #fff;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -376,6 +380,10 @@ div.link-container svg {
 
 div.link-container svg:hover {
   fill: #9d9c9c;
+}
+
+div.link-container svg:active {
+  fill: #000;
 }
 
 a.ext-link svg {
