@@ -98,6 +98,7 @@ var projects = {
               "utilizing Firebase for hosting, user authentication, and back-end data storage"
           ],
           "externalLink": "https://dazzling-torch-4012.firebaseapp.com/",
+          "githubLink": "https://github.com/NDNewell/frontend-nanodegree-map-project",
           "cssClass": "surflist"
         },
         {
@@ -113,6 +114,7 @@ var projects = {
               "HTML5 Canvas for game animation"
           ],
           "externalLink": "https://ndnewell.github.io/frontend-nanodegree-arcade-game/",
+          "githubLink": "https://github.com/NDNewell/frontend-nanodegree-arcade-game",
           "cssClass": "ccrush"
         },
         {
@@ -130,6 +132,7 @@ var projects = {
               "making sure the feeds load properly"
           ],
           "externalLink": "http://NDNewell.github.io/frontend-nanodegree-feedreader",
+          "githubLink": "https://github.com/NDNewell/frontend-nanodegree-feedreader",
           "cssClass": "udacifeeds"
         },
         {
@@ -148,6 +151,7 @@ var projects = {
               "calculating CRP metrics"
           ],
           "externalLink": "https://ndnewell.github.io/frontend-nanodegree-mobile-portfolio",
+          "githubLink": "https://github.com/NDNewell/frontend-nanodegree-mobile-portfolio",
           "cssClass": "perf"
         }
     ]
@@ -302,13 +306,22 @@ var modalConstructor = function (project) {
   var $modalLinkContainer = $(".link-container");
 
   // Add a link to the project that opens in a new window
-  $modalLinkContainer.insertAdjacentHTML('beforeend', '<a href="'+ project.externalLink + '" target="_blank" class="' + project.cssClass + '-link"></a>');
+  $modalLinkContainer.insertAdjacentHTML('beforeend', '<a href="'+ project.externalLink + '" target="_blank" class="ext-link"></a>');
 
   // Save a ref to external link elem
-  $extLinkElem = $("." + project.cssClass + "-link");
+  $extLinkElem = $(".ext-link");
 
   // Add img that opens the external link when clicked
   $extLinkElem.insertAdjacentHTML('beforeend', '<svg alt="link to project icon"><use xlink:href="#publish"/></svg>');
+
+  // Add a link to the project that opens in a new window
+  $modalLinkContainer.insertAdjacentHTML('beforeend', '<a href="'+ project.githubLink + '" target="_blank" class="gh-link"></a>');
+
+  // Save a ref to external link elem
+  $ghLinkElem = $(".gh-link");
+
+  // Add img that opens the external link when clicked
+  $ghLinkElem.insertAdjacentHTML('beforeend', '<svg alt="link to github repository icon"><use xlink:href="#github"/></svg>');
 };
 
 // Close the modal when the close modal button is clicked

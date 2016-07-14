@@ -373,3 +373,16 @@ div.link-container svg {
   width: 50px;
   cursor: pointer;
 }
+
+div.link-container svg:hover {
+  fill: #9d9c9c;
+}
+
+a.ext-link svg {
+  margin-right: 10px;
+}
+
+a.gh-link svg {
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
