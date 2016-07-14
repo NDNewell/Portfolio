@@ -420,15 +420,18 @@ var $sliderMenu = getNthChild($("#drawer"), 0),
 // Add event listeners to each menu link
 // When clicking a link, the page is scrolled to the appropriate section
 $menuAbout.addEventListener("click", function(e) {
-  $body.scrollTop = $aboutSection.offsetTop + 2;
+
+  window.scroll(0, $aboutSection.offsetTop + 2);
 });
 
 $menuSkills.addEventListener("click", function(e) {
-  $body.scrollTop = $skillsSection.offsetTop + 2;
+
+  window.scroll(0, $skillsSection.offsetTop + 2);
 });
 
 $menuWork.addEventListener("click", function(e) {
-  $body.scrollTop = $projectSection.offsetTop + 2;
+
+  window.scroll(0, $projectSection.offsetTop + 2);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
