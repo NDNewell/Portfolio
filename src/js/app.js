@@ -272,7 +272,12 @@ var projectsConstructor = (function() {
         // Show the modal
         $modal.style.display = "block";
 
-        // Disable scrolling for the main page
+        // Hide the main page if modal takes up whole screen
+        if(window.innerWidth <= 768)  {
+          $(".container").style.display = "none";
+        }
+
+        // Disable overflow
         document.body.style.overflow = "hidden";
       };
     })(project));
@@ -391,7 +396,14 @@ function clearModal() {
     // Hide the modal
     $modal.style.display = "none";
 
-    // Re-enable scrolling for main page
+    // Show the main page if modal takes up whole screen
+
+    if(window.innerWidth <= 768)  {
+
+      $(".container").style.display = "block";
+    }
+
+    // Re-enable overflow
     document.body.style.overflow = "visible";
 }
 
