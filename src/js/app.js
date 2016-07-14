@@ -144,7 +144,8 @@ var projects = {
               "optimizing the DOM",
               "unblocking CSS with media queries",
               "asyncing JavaScript",
-              "workflow (Gulp and Grunt)"
+              "workflow (Gulp and Grunt)",
+              "calculating CRP metrics"
           ],
           "externalLink": "https://ndnewell.github.io/frontend-nanodegree-mobile-portfolio",
           "cssClass": "perf"

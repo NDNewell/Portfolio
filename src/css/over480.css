@@ -1,3 +1,11 @@
+div.title-container {
+  padding-top: 5%;
+}
+
+div.title-container p:first-child {
+  font-size: 40px;
+}
+
 div.skills {
   display: flex;
   flex-wrap: wrap;

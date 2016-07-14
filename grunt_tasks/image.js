@@ -79,12 +79,12 @@ module.exports = function (grunt, config) {
                         removeUselessStrokeAndFill: false
                     }
                 ]
-            },
+            }/*,
             dist: {
                 files: {
                     'dist/img/publish.svg': 'src/img/publish.svg'
                 }
-            }
+            }*/
         },
         watch: {
             svgs: {
@@ -94,7 +94,7 @@ module.exports = function (grunt, config) {
                 ],
                 tasks: [
                     'svgstore',
-                    'svgmin'
+                    //'svgmin'
                 ]
             }/*,
             raster: {

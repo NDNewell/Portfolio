@@ -17,6 +17,18 @@ div.container {
   margin-top: 50px;
 }
 
+div.title-container {
+  padding-top: 3%;
+}
+
+div.title-container p:first-child {
+  font-size: 55px;
+}
+
+div.title-container p:first-child + p {
+  font-size: 22px;
+}
+
 div.about div {
   padding: 5px 75px 20px;
 }
