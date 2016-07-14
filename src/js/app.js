@@ -177,7 +177,7 @@ menu.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen && window.innerWidth < 769) {
+  if(touchScreen && window.innerWidth <= 768) {
     document.body.style.overflow = "hidden";
   }
 });
@@ -187,7 +187,7 @@ drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen && window.innerWidth < 769)  {
+  if(touchScreen && window.innerWidth <= 768)  {
     document.body.style.overflow = "visible";
   }
 });
