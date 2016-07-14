@@ -157,16 +157,39 @@ var projects = {
     ]
 };
 
+// Check if device has touchscreen
+var touchScreen = (function() {
+
+  if('ontouchstart' in document.documentElement) {
+
+    console.log('device supports touch events');
+
+    return true;
+
+  } else {
+
+    return false;
+  }
+})();
+
 // Open drawer to display menu on clicking hamburger icon
 menu.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
+
+  if(touchScreen) {
+    document.body.style.overflow = "hidden";
+  }
 });
 
 // Close drawer upon clicking drawer
 drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
+
+  if(touchScreen) {
+    document.body.style.overflow = "visible";
+  }
 });
 
 // Cache a reference to elements needed to construct project elems
@@ -477,9 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // @date 2014-12-20
 
 // Check if the device supports touch events
-if('ontouchstart' in document.documentElement) {
-
-    console.log('device supports touch events');
+if(touchScreen) {
 
     // Loop through each stylesheet
     for(var sheetI = document.styleSheets.length - 1; sheetI >= 0; sheetI--) {
