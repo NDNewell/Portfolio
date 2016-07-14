@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 5000);
 
       xhr = new XMLHttpRequest();
-      xhr.open('GET', '/img/svg_sprites.svg', true);
+      xhr.open('GET', 'img/svg_sprites.svg', true);
       xhr.onload = function () {
 
         if(xhr.status >= 200 && xhr.status < 400) {
