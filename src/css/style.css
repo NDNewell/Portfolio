@@ -79,11 +79,6 @@ nav div p a:hover {
   color: #5CBDE2;
 }
 
-nav div p:active,
-nav div p a:active {
-  color: #5CBDE2;
-}
-
 div a {
   text-decoration: none;
   color: white;
@@ -100,11 +95,7 @@ nav div div a svg {
   width: 75px;
 }
 
-nav div div a svg:active {
-  fill: #5CBDE2;
-}
-
-nav div div a svg:active {
+nav div div a svg:hover {
   fill: #5CBDE2;
 }
 
