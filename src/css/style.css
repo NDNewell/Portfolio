@@ -215,6 +215,7 @@ div.project img,
 div.project svg {
   width: 100%;
   -webkit-filter: brightness(100%);
+  filter: brightness(100%);
   -webkit-transition: 500ms;
   -moz-transition: 500ms;
   -o-transition: 500ms;
@@ -224,6 +225,7 @@ div.project svg {
 div.project:hover img,
 div.project:hover svg {
   -webkit-filter: brightness(20%);
+  filter: brightness(20%);
 }
 
 div.project div {
