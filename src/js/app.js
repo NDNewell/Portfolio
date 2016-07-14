@@ -177,7 +177,7 @@ menu.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen) {
+  if(touchScreen && window.innerWidth < 769) {
     document.body.style.overflow = "hidden";
   }
 });
@@ -187,7 +187,7 @@ drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen) {
+  if(touchScreen && window.innerWidth < 769)  {
     document.body.style.overflow = "visible";
   }
 });
@@ -345,6 +345,12 @@ var modalConstructor = function (project) {
 
   // Add img that opens the external link when clicked
   $ghLinkElem.insertAdjacentHTML('beforeend', '<svg alt="link to github repository icon"><use xlink:href="#github"/></svg>');
+
+  // Scroll to top of the page once modal is constructed if on a mobile device
+  if(touchScreen && window.innerWidth < 769) {
+
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 };
 
 // Close the modal when the close modal button is clicked
