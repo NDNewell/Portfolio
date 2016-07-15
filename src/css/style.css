@@ -99,6 +99,17 @@ nav div div a svg:hover {
   fill: #5CBDE2;
 }
 
+/*
+  This is used to substitute pseudo 'hover' for Mozilla. Normally, with jst
+  'hover', Mozilla will not activate hovering over transparent gaps in the
+  icon. This fixes that in conjunction with a JS evt listener that toggles
+  this class. With 'path', this fails in Chrome, so normal 'hover' is also
+  implemented above.
+*/
+.hover-menu-icon path {
+  fill: #5CBDE2;
+}
+
 a#menu svg {
   margin: -1px 0px 0px 6px;
   width: 40px;

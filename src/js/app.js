@@ -47,7 +47,7 @@ var clear = function(elem) {
     var elemLength = elem.length;
 
     // Iterate through the array and clear the content from each element
-    for(i = elemLength; i--;) {
+    for(var i = elemLength; i--;) {
       elem[i].textContent = "";
     }
 
@@ -523,6 +523,29 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.portPicsVersion = portPicsVersion;
     }
 });
+
+var $menuIcon = $('.menu-icon'),
+    menuIconLgth = $menuIcon.length;
+
+for(var i = menuIconLgth; i--;) {
+
+  var $icon = $menuIcon[i];
+
+  addMenuListeners($icon);
+}
+
+function addMenuListeners () {
+
+  $icon.addEventListener("mouseenter", function(e) {
+
+    this.classList.toggle('hover-menu-icon');
+  });
+
+  $icon.addEventListener("mouseleave", function(e) {
+
+    this.classList.toggle('hover-menu-icon');
+  });
+}
 
 // Converts :hover CSS to :active CSS on mobile devices.
 // Otherwise, when tapping a button on a mobile device, the button stays in
