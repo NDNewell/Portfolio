@@ -237,7 +237,7 @@ var projectsConstructor = (function() {
   function loadProjects(project) {
 
     // Create a project card and add to the projects container
-    $projectsContainer.insertAdjacentHTML('beforeend', '<div class="' + project.cssClass + '-card project"></div>');
+    $projectsContainer.insertAdjacentHTML('beforeend', '<div class="' + project.cssClass + '-card project-wrapper"></div>');
 
     // Save ref to the current project card
     var $projectCard = $("." + project.cssClass + "-card");
@@ -245,9 +245,13 @@ var projectsConstructor = (function() {
     // Add the projects banner image
     $projectCard.insertAdjacentHTML('beforeend', project.modalBanner);
 
-    $projectCard.insertAdjacentHTML('beforeend', '<div></div>');
+    $projectCard.insertAdjacentHTML('beforeend', '<div class="text-container"></div>');
 
-    $hoverTextContainer = getNthChild($projectCard, 1);
+    $flexContainer = getNthChild($projectCard, 1);
+
+    $flexContainer.insertAdjacentHTML('beforeend', '<div class="text-wrapper"></div>');
+
+    $hoverTextContainer = getNthChild($flexContainer, 0);
 
     $hoverTextContainer.insertAdjacentHTML('beforeend', '<p>' + project.shortDescription + '</p>');
 
@@ -524,9 +528,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Save a ref to all of the menu icon and the length of their classname array
 var $menuIcon = $('.menu-icon'),
     menuIconLgth = $menuIcon.length;
 
+// Add a listener to each menu icon
 for(var i = menuIconLgth; i--;) {
 
   var $icon = $menuIcon[i];
@@ -534,6 +540,12 @@ for(var i = menuIconLgth; i--;) {
   addMenuListeners($icon);
 }
 
+// Attach listeners that detect when the mouse hovers over the menu icon.
+// When hovering over the icon, change the fill colour in order to highlight
+// it. This is done by toggling a class with the new fill colour.
+// This is specifically used to address Moz Frfx's failure to highlight the
+// icon over transparent gaps in the svg when using the 'hover' pseudo
+// property in CSS.
 function addMenuListeners () {
 
   $icon.addEventListener("mouseenter", function(e) {

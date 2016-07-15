@@ -28,17 +28,17 @@ div.technology {
   margin: 0px 8px 8px 4px;
 }
 
-div.project {
-  margin-bottom: -13px;
+div.project-wrapper {
+  padding-bottom: 0;
   width: 50%;
+}
+
+div.project-wrapper img {
+  width: 100%;
 }
 
 div.projects-container {
   background-color: initial;
-}
-
-div.project img {
-  width: 100%;
 }
 
 table {

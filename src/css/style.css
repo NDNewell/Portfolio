@@ -214,16 +214,17 @@ div.projects-container {
   background-color: #d9d9d9;
 }
 
-div.project {
+div.project-wrapper {
   position: relative;
-  width: 100%;
-  margin-bottom: -5px;
   padding-bottom: 8px;
+  margin-bottom: -5px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
-div.project img,
-div.project svg {
+div.project-wrapper img,
+div.project-wrapper svg {
   width: 100%;
   -webkit-filter: brightness(100%);
   filter: brightness(100%);
@@ -233,34 +234,37 @@ div.project svg {
   transition: 500ms;
 }
 
-div.project:hover img,
-div.project:hover svg {
+div.project-wrapper:hover img,
+div.project-wrapper:hover svg {
   -webkit-filter: brightness(20%);
   filter: brightness(20%);
 }
 
-div.project div {
+div.text-container {
+  display: flex;
+  align-items: center;
   position: absolute;
-  display: table;
-  left: 0;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
-  color: white;
 }
 
-div.project div p {
-  display: table-cell;
+div.text-wrapper {
   text-align: center;
-  vertical-align: middle;
+  margin: auto;
+}
+
+div.text-wrapper p {
   opacity: 0;
+  color: #fff;
   -webkit-transition: 500ms;
   -moz-transition: 500ms;
   -o-transition: 500ms;
   transition: 500ms;
 }
 
-div.project div:hover p {
+div.text-container:hover p {
   opacity: 1;
 }
 
