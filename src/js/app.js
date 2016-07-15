@@ -177,7 +177,8 @@ menu.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen && window.innerWidth <= 768) {
+  if(window.innerWidth <= 768) {
+
     document.body.style.overflow = "hidden";
   }
 });
@@ -187,7 +188,8 @@ drawer.addEventListener('click', function(e) {
   drawer.classList.toggle('open');
   e.stopPropagation();
 
-  if(touchScreen && window.innerWidth <= 768)  {
+  if(window.innerWidth <= 768)  {
+
     document.body.style.overflow = "visible";
   }
 });
@@ -444,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var localStorage = window.localStorage,
           portPicsVersionCached = localStorage.getItem('portPicsVersion'),
-          portPicsVersion = 1;
+          portPicsVersion = 2;
 
       if(portPicsVersionCached == portPicsVersion) {
 
