@@ -180,13 +180,14 @@ div.title-container p:first-child + p {
   margin-top: -5px;
 }
 
-div.about h3,
 div.skills h3 {
   color: #5CBDE2;
 }
 
 div.about div {
-  padding: 5px 20px 20px;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
 }
 
 div.skill {
