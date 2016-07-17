@@ -178,8 +178,6 @@ document.addEventListener('click', function(e) {
   // Open menu if hamburger icon is clicked
   if(e.target.closest("#hamburger")) {
 
-    console.log('clicked hamburger, open menu');
-
     drawer.classList.toggle('open');
 
     if(window.innerWidth <= 768) {
@@ -190,8 +188,6 @@ document.addEventListener('click', function(e) {
   // Close menu if drawer or link is clicked
   } else if (e.target.closest("#drawer")) {
 
-    console.log('click drawer, close menu');
-
     drawer.classList.toggle('open');
 
     if(window.innerWidth <= 768)  {
@@ -201,8 +197,6 @@ document.addEventListener('click', function(e) {
 
   // Close menu if user clicks outside the drawer
   } else if (!e.target.closest("#hamburger")) {
-
-    console.log('clicked outside of menu, close drawer');
 
     $("#drawer").className = "";
   }
@@ -289,16 +283,6 @@ var projectsConstructor = (function() {
         // Construct the modal with the currently iterated project data
         modalConstructor(project);
 
-        // Show the modal
-        $modal.style.display = "block";
-
-        // Hide the main page if modal takes up whole screen
-        if(window.innerWidth <= 768)  {
-          $(".container").style.display = "none";
-        }
-
-        // Disable overflow
-        document.body.style.overflow = "hidden";
       };
     })(project));
   }
@@ -307,6 +291,24 @@ var projectsConstructor = (function() {
 // Populate modal with project data
 // Pass the currently iterated project from the projects constructor
 var modalConstructor = function (project) {
+
+  // If on a mobile device, set the location hash
+  if(touchScreen && window.innerWidth <= 768) {
+
+    // Set location hash;
+    location.hash = project.cssClass;
+  }
+
+  // Show the modal
+  $modal.style.display = "block";
+
+  // Hide the main page if modal takes up whole screen
+  if(window.innerWidth <= 768)  {
+    $(".container").style.display = "none";
+  }
+
+  // Disable overflow
+  document.body.style.overflow = "hidden";
 
   // Add necessary DOM elements for constructing the modal
   // Add project information to each section
@@ -410,21 +412,29 @@ window.addEventListener("click", function(e) {
 
 function clearModal() {
 
-    // Clear the modal when closing it
-    clear($modalBody);
+  // Using a mobile device and not at the pages base location hash 'home'
+  // Go back to previous location hash 'home'
+  if(location.hash !== "#home" && touchScreen && window.innerWidth <= 768) {
 
-    // Hide the modal
-    $modal.style.display = "none";
+    // Set location hash back to home
+    window.history.back();
+  }
 
-    // Show the main page if modal takes up whole screen
+  // Clear the modal when closing it
+  clear($modalBody);
 
-    if(window.innerWidth <= 768)  {
+  // Hide the modal
+  $modal.style.display = "none";
 
-      $(".container").style.display = "block";
-    }
+  // Show the main page if modal takes up whole screen
 
-    // Re-enable overflow
-    document.body.style.overflow = "visible";
+  if(window.innerWidth <= 768)  {
+
+    $(".container").style.display = "block";
+  }
+
+  // Re-enable overflow
+  document.body.style.overflow = "visible";
 }
 
 // Create refs to portfolio sections and menu links
@@ -607,3 +617,34 @@ if(touchScreen) {
         }
     }
 }
+
+// If the device is a mobile device enable custom hash history
+// This is to address the device's back button behavior when leaving a project
+// modal.
+// Check when the location hash has changed
+// If it has changed to 'home' and  a modal is open, close it
+if(touchScreen && window.innerWidth <= 768) {
+
+  // Set initial location hash to home once DOM has loaded
+  document.addEventListener('DOMContentLoaded', function () {
+
+      location.hash = "home";
+
+  }, false);
+
+  // Check for location hash changes
+  window.onhashchange = function() {
+
+        // If location hash changes to 'home' and the project modal is open,
+        // close it
+        if(location.hash === '#home') {
+
+            if(typeof $('.modal-img-container') !== 'undefined') {
+
+                clearModal();
+            }
+        }
+
+  };
+}
+
