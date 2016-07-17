@@ -172,25 +172,39 @@ var touchScreen = (function() {
   }
 })();
 
-// Open drawer to display menu on clicking hamburger icon
-menu.addEventListener('click', function(e) {
-  drawer.classList.toggle('open');
-  e.stopPropagation();
+// Toggle opening and closing the menu drawer
+document.addEventListener('click', function(e) {
 
-  if(window.innerWidth <= 768) {
+  // Open menu if hamburger icon is clicked
+  if(e.target.closest("#hamburger")) {
 
-    document.body.style.overflow = "hidden";
-  }
-});
+    console.log('clicked hamburger, open menu');
 
-// Close drawer upon clicking drawer
-drawer.addEventListener('click', function(e) {
-  drawer.classList.toggle('open');
-  e.stopPropagation();
+    drawer.classList.toggle('open');
 
-  if(window.innerWidth <= 768)  {
+    if(window.innerWidth <= 768) {
 
-    document.body.style.overflow = "visible";
+      document.body.style.overflow = "hidden";
+    }
+
+  // Close menu if drawer or link is clicked
+  } else if (e.target.closest("#drawer")) {
+
+    console.log('click drawer, close menu');
+
+    drawer.classList.toggle('open');
+
+    if(window.innerWidth <= 768)  {
+
+      document.body.style.overflow = "visible";
+    }
+
+  // Close menu if user clicks outside the drawer
+  } else if (!e.target.closest("#hamburger")) {
+
+    console.log('clicked outside of menu, close drawer');
+
+    $("#drawer").className = "";
   }
 });
 
