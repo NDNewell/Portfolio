@@ -29,10 +29,6 @@ div.title-container p:first-child + p {
   font-size: 22px;
 }
 
-div.about div {
-  padding: 5px 75px 20px;
-}
-
 div.skill {
   font-size: 14px;
 }

@@ -2,7 +2,6 @@ div.container {
   width: 978px;
 }
 
-
 div.about div {
-  padding: 5px 150px 20px;
+  font-size: 22px;
 }
