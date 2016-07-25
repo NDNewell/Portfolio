@@ -428,7 +428,7 @@ function clearModal() {
 
   // Show the main page if modal takes up whole screen
 
-  if(window.innerWidth <= 768)  {
+  if($('.container').offsetLeft <= 0)  {
 
     $(".container").style.display = "block";
   }
