@@ -347,9 +347,10 @@ div.modal-content {
 
 div.modal-header {
   position: fixed;
-  display: table;
-  width: 100%;
+  display: flex;
+  align-items: center;
   height: 40px;
+  width: 100%;
   top: 0;
   left: 0;
   background-color: #9d9c9c;
@@ -357,14 +358,13 @@ div.modal-header {
 }
 
 div.modal-header div {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 5px;
+  padding: 1px 0 1px 3px;
 }
 
 .close {
-  color: white;
-  font-size: 29px;
+  line-height: 50%;
+  color: #fff;
+  font-size: 55px;
 }
 
 .close:hover,

@@ -426,8 +426,7 @@ function clearModal() {
   // Hide the modal
   $modal.style.display = "none";
 
-  // Show the main page if modal takes up whole screen
-
+  // Show the container if hidden
   if($('.container').offsetLeft <= 0)  {
 
     $(".container").style.display = "block";
@@ -646,5 +645,18 @@ if(touchScreen && window.innerWidth <= 768) {
         }
 
   };
+}
+
+// When the device is not touch, adjust the positioning of the close btn on
+// the modal by adjusting the padding.
+// For some reason, without adjusting this, the positioning isn't the same
+// across devices. Despite the code being the same, the position of the close
+// btn in dev tools mobile view is different than on an actual mobile device.
+// This adjusts for the bug
+if(!touchScreen) {
+
+  var closeWrapper = getNthChild($('.modal-header'), 0);
+
+  closeWrapper.style.padding = "0px 0px 11px 3px";
 }
 
