@@ -7,8 +7,15 @@ div.title-container p:first-child {
 }
 
 div.skills {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   font-size: 12px;
 }
 
