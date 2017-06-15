@@ -473,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var localStorage = window.localStorage,
           portPicsVersionCached = localStorage.getItem('portPicsVersion'),
-          portPicsVersion = 2;
+          portPicsVersion = 1;
 
       if(portPicsVersionCached == portPicsVersion) {
 
@@ -659,4 +659,3 @@ if(!touchScreen) {
 
   closeWrapper.style.padding = "0px 0px 11px 3px";
 }
-
